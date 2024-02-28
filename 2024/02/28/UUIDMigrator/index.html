@@ -12,7 +12,7 @@
 
     <title>
         
-        
+        MC存档玩家uuid自动迁移脚本以及一个MC服务器状态查询工具 - undefined
         
     </title>
 
@@ -81,7 +81,7 @@
                     <span>标签</span>
                 </a>
             </li>
-            <li  class=active >
+            <li >
                 <a href="/archives">
                     <i class="iconfont icon-guidang2"></i>
                     <span>存档</span>
@@ -102,6 +102,10 @@
             
         </ul>
     </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%A6%E7%BB%86"><span class="toc-text">详细</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%8B%E8%BD%BD"><span class="toc-text">下载</span></a></li></ol>
+</div>
     
 </div>
 
@@ -130,80 +134,33 @@
         
 
 
-<!-- 归档列表 -->
+<div class="post-container">
+    <div class="post-title">
+        MC存档玩家uuid自动迁移脚本以及一个MC服务器状态查询工具
+    </div>
 
-<div class="archives-container">
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2024-02-28 20:01:15</span></span>
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <h3 id="详细"><a href="#详细" class="headerlink" title="详细"></a>详细</h3><p>多人游戏中更换登录方式后会导致玩家UUID发生变化，从而导致玩家的物品，成就等数据丢失，通过将用来存储的UUID替换为新的UUID的方式可以实现物品成就的迁移，此脚本旨在简化操作<br>UUID可以通过查看之前的日志获取，玩家进入服务器或世界的时候，日志会记录其当前UUID<br>更多提示注释有写<br>很简单的一个脚本，就是对原来uuid的文件进行了复制，将其放入想要替换数据的存档文件夹再运行即可，下为完整代码,可直接复制保存在bat文件使用<br><img src="https://i0.hdslb.com/bfs/new_dyn/40fd3918e4985fcc126a54d3f75abc8f496960407.png@1192w.avif" alt="img"></p>
+<h3 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h3><ul>
+<li><a href="UUIDMigrator/UUIDMigrator.bat">下载</a></li>
+</ul>
 
-<div class="one-tag-list">
-                <span class="fa fa-calendar-times-o listing-seperator" id="2024">
-                    <span class="tag-text">2024</span>
-                </span>
-    <ul>
         
-        <!-- <li class="listing-item">
-        <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-        <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-        </li> -->
-        <li >
-            <span>02-28</span>
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/2024/02/28/UUIDMigrator/">
-                        <span>
-                            MC存档玩家uuid自动迁移脚本以及一个MC服务器状态查询工具
-                        </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-        </li>
-        
-        <!-- <li class="listing-item">
-        <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-        <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-        </li> -->
-        <li >
-            <span>02-28</span>
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/2024/02/28/mcwiki/">
-                        <span>
-                            mcwiki从fandom自动跳转到新wiki的Header Editor规则
-                        </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-        </li>
-        
-        <!-- <li class="listing-item">
-        <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-        <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-        </li> -->
-        <li >
-            <span>02-28</span>
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/2024/02/28/Openp2p-Launcher-MC帮助文档/">
-                        <span>
-                            Openp2p-Launcher-MC帮助文档
-                        </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-        </li>
-        
-        <!-- <li class="listing-item">
-        <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-        <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-        </li> -->
-        <li >
-            <span>02-28</span>
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/2024/02/28/测试文档/">
-                        <span>
-                            测试文档
-                        </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-        </li>
-        
-
-    </ul>
-</div>
-
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+        <div id="lv-container"></div>
+        <div class="giscus"></div>
+    </div>
 </div>
 
     </div>
@@ -269,7 +226,7 @@
     // We expose some of the variables needed by the front end
     window.hexo_search_path = ""
     window.hexo_root = "/"
-    window.isPost = false
+    window.isPost = true
 </script>
 <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
 
@@ -278,6 +235,23 @@
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
 
+
+
+    <script src="https://giscus.app/client.js"
+    data-repo="Guailoudou/pages"
+    data-repo-id="R_kgDOLZFPxQ"
+    data-category="Announcements"
+    data-category-id="DIC_kwDOLZFPxc4CdlRm"
+    data-mapping="pathname"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="bottom"
+    data-theme="preferred_color_scheme"
+    data-lang="zh-CN"
+    crossorigin="anonymous"
+    async>
+</script>
 
 
 

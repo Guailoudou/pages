@@ -12,7 +12,7 @@
 
     <title>
         
-        
+        mcwiki从fandom自动跳转到新wiki的Header Editor规则 - undefined
         
     </title>
 
@@ -81,7 +81,7 @@
                     <span>标签</span>
                 </a>
             </li>
-            <li  class=active >
+            <li >
                 <a href="/archives">
                     <i class="iconfont icon-guidang2"></i>
                     <span>存档</span>
@@ -102,6 +102,10 @@
             
         </ul>
     </div>
+    
+        <div id="toc" class="toc-article">
+    
+</div>
     
 </div>
 
@@ -130,80 +134,35 @@
         
 
 
-<!-- 归档列表 -->
+<div class="post-container">
+    <div class="post-title">
+        mcwiki从fandom自动跳转到新wiki的Header Editor规则
+    </div>
 
-<div class="archives-container">
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2024-02-28 19:53:33</span></span>
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <p>mcwiki进行了迁移，但是部分搜索引擎搜索出来依然是fandom的地址，使用如下规则可以访问fandom的地址后自动跳转到行站的地址</p>
+<p>下载Header Editor扩展之后新建规则，安装如下填写<br><img src="https://i0.hdslb.com/bfs/new_dyn/watermark/e584cbe3b84c2c5613e45a3f049b887f496960407.png@1192w.avif" alt="img"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">^http(s?)://(?:minecraft\.|)fandom\.com(.*)/wiki/(.*)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://zh.minecraft.wiki/w/$3</span><br></pre></td></tr></table></figure>
 
-<div class="one-tag-list">
-                <span class="fa fa-calendar-times-o listing-seperator" id="2024">
-                    <span class="tag-text">2024</span>
-                </span>
-    <ul>
-        
-        <!-- <li class="listing-item">
-        <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-        <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-        </li> -->
-        <li >
-            <span>02-28</span>
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/2024/02/28/UUIDMigrator/">
-                        <span>
-                            MC存档玩家uuid自动迁移脚本以及一个MC服务器状态查询工具
-                        </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-        </li>
-        
-        <!-- <li class="listing-item">
-        <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-        <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-        </li> -->
-        <li >
-            <span>02-28</span>
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/2024/02/28/mcwiki/">
-                        <span>
-                            mcwiki从fandom自动跳转到新wiki的Header Editor规则
-                        </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-        </li>
-        
-        <!-- <li class="listing-item">
-        <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-        <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-        </li> -->
-        <li >
-            <span>02-28</span>
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/2024/02/28/Openp2p-Launcher-MC帮助文档/">
-                        <span>
-                            Openp2p-Launcher-MC帮助文档
-                        </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-        </li>
-        
-        <!-- <li class="listing-item">
-        <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-        <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-        </li> -->
-        <li >
-            <span>02-28</span>
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/2024/02/28/测试文档/">
-                        <span>
-                            测试文档
-                        </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-        </li>
-        
+<p>效果演示：<br><img src="https://i0.hdslb.com/bfs/new_dyn/24da33d6b7033c8fd97619ebd0047548496960407.gif@1192w.avif" alt="gif"></p>
 
-    </ul>
-</div>
-
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+        <div id="lv-container"></div>
+        <div class="giscus"></div>
+    </div>
 </div>
 
     </div>
@@ -269,7 +228,7 @@
     // We expose some of the variables needed by the front end
     window.hexo_search_path = ""
     window.hexo_root = "/"
-    window.isPost = false
+    window.isPost = true
 </script>
 <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
 
@@ -278,6 +237,23 @@
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
 
+
+
+    <script src="https://giscus.app/client.js"
+    data-repo="Guailoudou/pages"
+    data-repo-id="R_kgDOLZFPxQ"
+    data-category="Announcements"
+    data-category-id="DIC_kwDOLZFPxc4CdlRm"
+    data-mapping="pathname"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="bottom"
+    data-theme="preferred_color_scheme"
+    data-lang="zh-CN"
+    crossorigin="anonymous"
+    async>
+</script>
 
 
 
