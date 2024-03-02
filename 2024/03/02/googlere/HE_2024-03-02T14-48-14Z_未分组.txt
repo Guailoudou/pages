@@ -1,0 +1,55 @@
+{
+	"request": [
+		{
+			"enable": true,
+			"name": "Google APIs",
+			"ruleType": "redirect",
+			"matchType": "regexp",
+			"pattern": "^http(s?)://ajax\\.googleapis\\.com/(.*)",
+			"exclude": "",
+			"isFunction": false,
+			"action": "redirect",
+			"to": "https://gapis.geekzu.org/ajax/$2",
+			"group": "未分组"
+		},
+		{
+			"enable": true,
+			"name": "reCaptcha",
+			"ruleType": "redirect",
+			"matchType": "regexp",
+			"pattern": "^http(s?)://(?:www\\.|recaptcha\\.|)google\\.com/recaptcha/(.*)",
+			"exclude": "",
+			"isFunction": false,
+			"action": "redirect",
+			"to": "https://recaptcha.net/recaptcha/$2",
+			"group": "未分组"
+		},
+		{
+			"enable": true,
+			"name": "mcwiki",
+			"ruleType": "redirect",
+			"matchType": "regexp",
+			"pattern": "^http(s?)://(?:minecraft\\.|)fandom\\.com(.*)/wiki/(.*)",
+			"exclude": "",
+			"group": "未分组",
+			"isFunction": false,
+			"action": "redirect",
+			"to": "https://zh.minecraft.wiki/w/$3"
+		},
+		{
+			"enable": false,
+			"name": "google",
+			"ruleType": "redirect",
+			"matchType": "regexp",
+			"pattern": "^http(s?)://(ajax|fonts)\\.googleapis\\.com/(.*)",
+			"exclude": "",
+			"group": "未分组",
+			"isFunction": false,
+			"action": "redirect",
+			"to": "https://$2.proxy.ustclug.org/$3"
+		}
+	],
+	"sendHeader": [],
+	"receiveHeader": [],
+	"receiveBody": []
+}
