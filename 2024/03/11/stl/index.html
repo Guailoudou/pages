@@ -258,8 +258,15 @@
 <p><code>sort()</code> 排序</p>
 <p><code>gcd(a, b)</code> 最大公约数</p>
 <p><code>lcm(a, b)</code> 最小公倍数</p>
-<h3 id="常见头文件"><a href="#常见头文件" class="headerlink" title="常见头文件"></a>常见头文件</h3><p><code>#include &lt;iostream&gt;</code>  <code>using namespace std;</code></p>
+<h3 id="常见头文件"><a href="#常见头文件" class="headerlink" title="常见头文件"></a>常见头文件</h3><p><code>#include &lt;iostream&gt;</code>  <code>using namespace std;</code><br><code>#include&lt;algorithm&gt;</code> - 排序sort max min…的头文件</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>pair：<code>pair&lt;类型1, 类型2&gt; 变量名(元素1, 元素2)</code>(可以用来储存两个元素，<del>把map塞进去</del> ) pair头文件为<code>#include&lt;utility&gt;</code></p>
+<p>塞入vector中：<code>vector&lt; pair&lt;string,double&gt; &gt; v(maps.begin(),maps.end());</code>(然后可以直接用迭代器了)</p>
+<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//实现对map的排序</span></span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">cmp</span><span class="params">(pair&lt;string,<span class="type">double</span>&gt; a,pair&lt;string,<span class="type">double</span>&gt; b)</span></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> a.second&gt;b.second; <span class="comment">//&gt;降序 &lt;升序  自定义排序规则</span></span><br><span class="line">&#125;</span><br><span class="line">vector&lt; pair&lt;string,<span class="type">double</span>&gt; &gt; <span class="built_in">v</span>(map.<span class="built_in">begin</span>(),map.<span class="built_in">end</span>());</span><br><span class="line"><span class="built_in">sort</span>(v.<span class="built_in">begin</span>(),v.<span class="built_in">end</span>(),cmp); </span><br></pre></td></tr></table></figure>
+
+
+
+
 
 
         
