@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang=zh-CN>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:description" content="乖漏斗个人博客，分享教程以及一些我制作的软件等，欢迎访问">
+    <meta property="og:type" content="website">
+    <meta name="description" content="乖漏斗个人博客，分享教程以及一些我制作的软件等，欢迎访问">
+    <meta name="keywords"  content="">
+    <link rel="shortcut icon" href="https://q1.qlogo.cn/g?b=qq&nk=1241593334&s=100">
+    <!-- <link rel="shortcut icon" href="/img/favicon.ico"> -->
+
+    <title>
+        
+        数据库2-18作业 - Guailoudou 博客
+        
+    </title><meta name="robots" content="noindex">
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/aircloud.css">
+
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_28hi1hpxx24.css" rel="stylesheet" type="text/css">
+    <link href="//at.alicdn.com/t/c/font_4657326_ux10jqqsarj.css"  rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+
+    
+
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 7.1.1"></head>
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> Guailoudou blog </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar radius">
+            <img src="https://q1.qlogo.cn/g?b=qq&nk=1241593334&s=640" />
+        </div>
+        <div class="name">
+            <i>Guailoudou</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/collect/">
+                    <i class="iconfont icon-shoucang1"></i>
+                    <span>收藏</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-bg" id="search-bg"></div>
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i> Guailoudou blog </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        <div class="post-container">
+    <div class="post-title">
+        数据库2-18作业
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2024-04-28 14:07:36</span></span>
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content no-indent">
+        <blockquote>
+<p>4.28 上机实验 按题目要求完成教材P116页第12-29题的SQL语句。 做完后截图上传显示SQL语句，标清题号。</p>
+</blockquote>
+<ol start="12">
+<li><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> Sname,Sdept <span class="keyword">FROM</span> sc c <span class="keyword">JOIN</span> student s <span class="keyword">ON</span> c.Sno<span class="operator">=</span>s.Sno <span class="keyword">WHERE</span> c.Cno<span class="operator">=</span><span class="string">&#x27;C002&#x27;</span>;</span><br></pre></td></tr></table></figure></li>
+<li><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> Sname,Cno,Grade <span class="keyword">FROM</span> sc c <span class="keyword">JOIN</span> student s <span class="keyword">ON</span> c.Sno<span class="operator">=</span>s.Sno <span class="keyword">WHERE</span> Grade<span class="operator">&gt;</span><span class="number">80</span> <span class="keyword">ORDER</span> <span class="keyword">BY</span> Grade <span class="keyword">DESC</span>;</span><br></pre></td></tr></table></figure></li>
+<li><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> Sname,Ssex,Grade <span class="keyword">FROM</span> sc c <span class="keyword">JOIN</span> student s <span class="keyword">ON</span> c.Sno<span class="operator">=</span>s.Sno <span class="keyword">JOIN</span> course o <span class="keyword">ON</span> o.Cno<span class="operator">=</span>c.Cno <span class="keyword">WHERE</span> o.Cname<span class="operator">=</span><span class="string">&#x27;数据库基础&#x27;</span> <span class="keyword">AND</span> s.Sdept<span class="operator">=</span><span class="string">&#x27;计算机系&#x27;</span>;</span><br></pre></td></tr></table></figure></li>
+<li><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> s.Sno,Sname,c.Cno,Grade <span class="keyword">FROM</span> sc c <span class="keyword">JOIN</span> student s <span class="keyword">ON</span> c.Sno<span class="operator">=</span>s.Sno <span class="keyword">JOIN</span> course o <span class="keyword">ON</span> o.Cno<span class="operator">=</span>c.Cno;</span><br></pre></td></tr></table></figure></li>
+<li><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> Cno, Cname <span class="keyword">FROM</span> course <span class="keyword">WHERE</span> Cno <span class="keyword">NOT</span> <span class="keyword">IN</span> (<span class="keyword">SELECT</span> Cno <span class="keyword">FROM</span> sc);</span><br></pre></td></tr></table></figure></li>
+<li><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> Sname <span class="keyword">FROM</span> student <span class="keyword">WHERE</span> Sno <span class="keyword">NOT</span> <span class="keyword">in</span> (<span class="keyword">SELECT</span> Sno <span class="keyword">FROM</span> sc) <span class="keyword">AND</span> Sdept <span class="operator">=</span> <span class="string">&#x27;计算机系&#x27;</span>;</span><br></pre></td></tr></table></figure></li>
+<li><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> s.Sno,Sname,Sdept,Grade <span class="keyword">FROM</span> sc c <span class="keyword">JOIN</span> student s <span class="keyword">ON</span> c.Sno<span class="operator">=</span>s.Sno <span class="keyword">JOIN</span> course o <span class="keyword">ON</span> o.Cno<span class="operator">=</span>c.Cno <span class="keyword">WHERE</span> Cname<span class="operator">=</span><span class="string">&#x27;数据库基础&#x27;</span> <span class="keyword">ORDER</span> <span class="keyword">BY</span> Grade <span class="keyword">DESC</span> LIMIT <span class="number">3</span>;</span><br></pre></td></tr></table></figure></li>
+<li><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> Sname,Sdept,Grade <span class="keyword">FROM</span> sc c <span class="keyword">JOIN</span> student s <span class="keyword">ON</span> c.Sno<span class="operator">=</span>s.Sno <span class="keyword">JOIN</span> course o <span class="keyword">ON</span> o.Cno<span class="operator">=</span>c.Cno <span class="keyword">WHERE</span> Cname<span class="operator">=</span><span class="string">&#x27;VB&#x27;</span> <span class="keyword">ORDER</span> <span class="keyword">BY</span> Grade LIMIT <span class="number">1</span>;</span><br></pre></td></tr></table></figure></li>
+<li><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> new_sc <span class="keyword">AS</span> (</span><br><span class="line"><span class="keyword">SELECT</span> Sname,Cname,Grade <span class="keyword">FROM</span> sc c <span class="keyword">JOIN</span> student s <span class="keyword">ON</span> c.Sno<span class="operator">=</span>s.Sno <span class="keyword">JOIN</span> course o <span class="keyword">ON</span> o.Cno<span class="operator">=</span>c.Cno <span class="keyword">WHERE</span> Grade <span class="keyword">IS</span> <span class="keyword">NOT</span> <span class="keyword">NULL</span></span><br><span class="line">);</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+</ol>
+<p>hff的</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> Sname,Sdept <span class="keyword">FROM</span> student s <span class="keyword">JOIN</span> sc <span class="keyword">ON</span>  s.Sno<span class="operator">=</span>sc.Sno</span><br><span class="line"><span class="keyword">WHERE</span> Cno<span class="operator">=</span><span class="string">&#x27;C002&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> Sname,Cno,Grade <span class="keyword">FROM</span> student s <span class="keyword">JOIN</span> sc <span class="keyword">ON</span> s.Sno<span class="operator">=</span>sc.Sno </span><br><span class="line"><span class="keyword">WHERE</span> Grade<span class="operator">&gt;</span><span class="number">80</span></span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> Grade <span class="keyword">DESC</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> Sname,Ssex,Grade <span class="keyword">FROM</span> student s <span class="keyword">JOIN</span> sc <span class="keyword">ON</span> s.Sno<span class="operator">=</span>sc.Sno <span class="keyword">JOIN</span> course c <span class="keyword">ON</span> c.Cno<span class="operator">=</span>sc.Cno</span><br><span class="line"><span class="keyword">WHERE</span> Sdept<span class="operator">=</span><span class="string">&#x27;计算机系&#x27;</span> <span class="keyword">AND</span> Ssex<span class="operator">=</span><span class="string">&#x27;男&#x27;</span> <span class="keyword">AND</span> Cname<span class="operator">=</span><span class="string">&#x27;数据库基础&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> s.Sno,Sname,Cno,Grade <span class="keyword">FROM</span> student s <span class="keyword">JOIN</span> sc <span class="keyword">ON</span> s.Sno<span class="operator">=</span>sc.Sno;</span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> c.Cno,Cname <span class="keyword">FROM</span> sc <span class="keyword">RIGHT</span> <span class="keyword">JOIN</span> course c <span class="keyword">ON</span> sc.Cno<span class="operator">=</span>c.Cno</span><br><span class="line"><span class="keyword">WHERE</span> sno <span class="keyword">IS</span> <span class="keyword">NULL</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> Sname <span class="keyword">FROM</span> student s <span class="keyword">LEFT</span> <span class="keyword">JOIN</span> sc <span class="keyword">ON</span> s.Sno<span class="operator">=</span>sc.Sno</span><br><span class="line"><span class="keyword">WHERE</span> Cno <span class="keyword">IS</span> <span class="keyword">NULL</span> <span class="keyword">AND</span> Sdept<span class="operator">=</span><span class="string">&#x27;计算机系&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> Sname,Ssex,Sdept,Grade <span class="keyword">FROM</span> sc <span class="keyword">JOIN</span> student s <span class="keyword">ON</span> s.Sno<span class="operator">=</span>sc.Sno <span class="keyword">JOIN</span> course c <span class="keyword">ON</span> c.Cno<span class="operator">=</span>sc.Cno</span><br><span class="line"><span class="keyword">WHERE</span>(Cname<span class="operator">=</span><span class="string">&#x27;数据库基础&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> Sname,Sdept,Grade <span class="keyword">FROM</span> student s <span class="keyword">JOIN</span> sc <span class="keyword">ON</span> s.Sno<span class="operator">=</span>sc.Sno <span class="keyword">JOIN</span> course c <span class="keyword">ON</span> c.Cno<span class="operator">=</span>sc.Cno</span><br><span class="line"><span class="keyword">WHERE</span> Cname<span class="operator">=</span><span class="string">&#x27;VB&#x27;</span></span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> Grade</span><br><span class="line">LIMIT <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> new_sc</span><br><span class="line">(<span class="keyword">SELECT</span> Sname,Cname,Grade</span><br><span class="line"><span class="keyword">FROM</span> student s <span class="keyword">JOIN</span> sc <span class="keyword">ON</span> sc.Sno<span class="operator">=</span>s.Sno <span class="keyword">JOIN</span> course c <span class="keyword">ON</span> c.Cno<span class="operator">=</span>sc.Cno</span><br><span class="line"><span class="keyword">WHERE</span> Grade <span class="keyword">IS</span> <span class="keyword">NOT</span> <span class="keyword">NULL</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> Sdept,Sname,Ssex,Cname,Grade <span class="keyword">FROM</span> student s <span class="keyword">JOIN</span> sc <span class="keyword">ON</span> s.Sno<span class="operator">=</span>sc.Sno <span class="keyword">JOIN</span> course c <span class="keyword">ON</span> c.Cno<span class="operator">=</span>sc.Cno</span><br><span class="line"><span class="keyword">WHERE</span> Sdept<span class="operator">=</span><span class="string">&#x27;信息管理系&#x27;</span></span><br><span class="line"><span class="keyword">UNION</span></span><br><span class="line"><span class="keyword">SELECT</span> Sdept,Sname,Ssex,Cname,Grade <span class="keyword">FROM</span> student s <span class="keyword">JOIN</span> sc <span class="keyword">ON</span> s.Sno<span class="operator">=</span>sc.Sno <span class="keyword">JOIN</span> course c <span class="keyword">ON</span> c.Cno<span class="operator">=</span>sc.Cno</span><br><span class="line"><span class="keyword">WHERE</span> Sdept<span class="operator">=</span><span class="string">&#x27;计算机系&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> s.Sno,Sname,</span><br><span class="line"><span class="keyword">CASE</span> Sdept</span><br><span class="line"><span class="keyword">WHEN</span> <span class="string">&#x27;计算机系&#x27;</span> <span class="keyword">THEN</span> <span class="string">&#x27;CS&#x27;</span></span><br><span class="line"><span class="keyword">WHEN</span> <span class="string">&#x27;信息管理系&#x27;</span> <span class="keyword">THEN</span> <span class="string">&#x27;IS&#x27;</span></span><br><span class="line"><span class="keyword">WHEN</span> <span class="string">&#x27;通信工程系&#x27;</span> <span class="keyword">THEN</span> <span class="string">&#x27;CO&#x27;</span></span><br><span class="line"><span class="keyword">ELSE</span> <span class="string">&#x27;OTHER&#x27;</span></span><br><span class="line"><span class="keyword">END</span>  <span class="keyword">AS</span> Sdept,Grade</span><br><span class="line"><span class="keyword">FROM</span> student s <span class="keyword">JOIN</span> sc <span class="keyword">ON</span> s.Sno<span class="operator">=</span>sc.Sno <span class="keyword">JOIN</span> course c <span class="keyword">ON</span> c.Cno<span class="operator">=</span>sc.Cno</span><br><span class="line"><span class="keyword">WHERE</span> Cname<span class="operator">=</span><span class="string">&#x27;VB&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> Sname,Sdept <span class="keyword">FROM</span>  student </span><br><span class="line"><span class="keyword">WHERE</span> Sno <span class="keyword">IN</span> (<span class="keyword">SELECT</span> Sno <span class="keyword">FROM</span> sc <span class="keyword">WHERE</span> Cno<span class="operator">=</span><span class="string">&#x27;C001&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> Sno,Sname <span class="keyword">FROM</span> student </span><br><span class="line"><span class="keyword">WHERE</span> Sno <span class="keyword">IN</span>(<span class="keyword">SELECT</span> Sno <span class="keyword">FROM</span> sc <span class="keyword">WHERE</span> Grade<span class="operator">&gt;</span><span class="number">80</span> )</span><br><span class="line"><span class="keyword">AND</span> sdept <span class="operator">=</span><span class="string">&#x27;通信工程系&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> Sname <span class="keyword">FROM</span> sc <span class="keyword">JOIN</span> student s <span class="keyword">ON</span> sc.Sno<span class="operator">=</span>s.Sno</span><br><span class="line"><span class="keyword">WHERE</span> Sdept<span class="operator">=</span><span class="string">&#x27;计算机系&#x27;</span> <span class="keyword">AND</span> grade<span class="operator">=</span>(<span class="keyword">SELECT</span> <span class="built_in">MAX</span>(grade) <span class="keyword">FROM</span> sc <span class="keyword">JOIN</span> student s <span class="keyword">ON</span> sc.Sno<span class="operator">=</span>s.Sno <span class="keyword">AND</span> sdept<span class="operator">=</span><span class="string">&#x27;计算机系&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> Sname,Sage <span class="keyword">FROM</span> student </span><br><span class="line"><span class="keyword">WHERE</span> Sage<span class="operator">=</span>(<span class="keyword">SELECT</span> <span class="built_in">MAX</span>(Sage) <span class="keyword">FROM</span> student)<span class="keyword">AND</span> Ssex<span class="operator">=</span><span class="string">&#x27;男&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> Sno,Grade <span class="keyword">FROM</span> sc</span><br><span class="line"><span class="keyword">WHERE</span> Cno<span class="operator">=</span><span class="string">&#x27;C001&#x27;</span> <span class="keyword">AND</span> Grade<span class="operator">&gt;</span>(<span class="keyword">SELECT</span> <span class="built_in">AVG</span>(Grade) <span class="keyword">FROM</span> sc <span class="keyword">WHERE</span> Cno<span class="operator">=</span><span class="string">&#x27;C001&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> test_s</span><br><span class="line">(</span><br><span class="line">COL1 <span class="type">INT</span>,</span><br><span class="line">COL2 <span class="type">CHAR</span>(<span class="number">10</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span>,</span><br><span class="line">COL3 <span class="type">CHAR</span>(<span class="number">10</span>)</span><br><span class="line">);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> test_s <span class="keyword">VALUES</span>(<span class="keyword">NULL</span>,<span class="string">&#x27;B1&#x27;</span>,<span class="keyword">NULL</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> test_s <span class="keyword">VALUES</span>(<span class="string">&#x27;1&#x27;</span>,<span class="string">&#x27;B2&#x27;</span>,<span class="string">&#x27;C2&#x27;</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> test_s <span class="keyword">VALUES</span>(<span class="string">&#x27;2&#x27;</span>,<span class="string">&#x27;B3&#x27;</span>,<span class="keyword">NULL</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">UPDATE</span> sc <span class="keyword">SET</span> Grade<span class="operator">=</span>Grade<span class="operator">+</span><span class="number">10</span> </span><br><span class="line"><span class="keyword">WHERE</span> Cno<span class="operator">=</span><span class="string">&#x27;C001&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">UPDATE</span> sc <span class="keyword">SET</span> Grade<span class="operator">=</span>Grade<span class="operator">+</span><span class="number">10</span></span><br><span class="line"><span class="keyword">WHERE</span> Sno <span class="keyword">IN</span> (<span class="keyword">SELECT</span> Sno <span class="keyword">FROM</span> student <span class="keyword">WHERE</span> Sdept<span class="operator">=</span><span class="string">&#x27;计算机系&#x27;</span>)<span class="keyword">AND</span> Cno <span class="keyword">IN</span>(<span class="keyword">SELECT</span> Cno <span class="keyword">FROM</span> course <span class="keyword">WHERE</span> Cname<span class="operator">=</span><span class="string">&#x27;计算机文化&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">UPDATE</span> sc <span class="keyword">SET</span> Grade<span class="operator">=</span>Grade<span class="operator">+</span><span class="number">10</span></span><br><span class="line"><span class="keyword">FROM</span> sc <span class="keyword">JOIN</span> student <span class="keyword">ON</span> sc.Sno<span class="operator">=</span>student.Sno <span class="keyword">JOIN</span> course <span class="keyword">ON</span> sc.Cno<span class="operator">=</span>course.Cno</span><br><span class="line"><span class="keyword">WHERE</span> student.Sdept<span class="operator">=</span><span class="string">&#x27;计算机系&#x27;</span> <span class="keyword">AND</span> course.Cname<span class="operator">=</span><span class="string">&#x27;计算机文化&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">DELETE</span> <span class="keyword">FROM</span> sc <span class="keyword">WHERE</span> Grade<span class="operator">&lt;</span><span class="number">50</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">DELETE</span> <span class="keyword">FROM</span> sc <span class="keyword">JOIN</span> student <span class="keyword">ON</span> student.Sno<span class="operator">=</span>sc.Sno</span><br><span class="line"><span class="keyword">WHERE</span> Sdept<span class="operator">=</span><span class="string">&#x27;信息管理系&#x27;</span> <span class="keyword">AND</span> Grade<span class="operator">&lt;</span><span class="number">50</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">DELETE</span> <span class="keyword">FROM</span> sc </span><br><span class="line"><span class="keyword">WHERE</span> Sno <span class="keyword">IN</span>(<span class="keyword">SELECT</span> Sno <span class="keyword">FROM</span> student <span class="keyword">WHERE</span> Sdept<span class="operator">=</span><span class="string">&#x27;信息管理系&#x27;</span> <span class="keyword">AND</span> Grade <span class="operator">&lt;</span><span class="number">50</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">DELETE</span> <span class="keyword">FROM</span> sc <span class="keyword">JOIN</span> course <span class="keyword">ON</span> sc.Cno<span class="operator">=</span>course.Cno </span><br><span class="line"><span class="keyword">WHERE</span> Grade<span class="operator">=</span>(<span class="keyword">SELECT</span> <span class="built_in">MIN</span>(Grade) <span class="keyword">FROM</span> sc <span class="keyword">JOIN</span> course c <span class="keyword">ON</span> c.Cno<span class="operator">=</span>sc.Cno <span class="keyword">WHERE</span> Cname<span class="operator">=</span><span class="string">&#x27;VB&#x27;</span>)</span><br><span class="line"><span class="keyword">AND</span> Cno <span class="keyword">IN</span>(<span class="keyword">SELECT</span> Cno <span class="keyword">FROM</span> course <span class="keyword">WHERE</span> Cname<span class="operator">=</span><span class="string">&#x27;VB&#x27;</span>);</span><br></pre></td></tr></table></figure><!-- flag of hidden posts -->
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+        <div id="lv-container"></div>
+        <div class="giscus"></div>
+    </div>
+</div>
+    </div>
+</div>
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+        <li>
+            <a target="_blank"  href="https://github.com/Guailoudou">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+            <li>
+                <a target="_blank"  href="https://afdian.com/a/Guailoudou">
+                                <span class="fa-stack fa-lg">
+                                    <i class="iconfont icon-afdian"></i>
+                                </span>
+                </a>
+            </li>
+        
+
+        
+            <li>
+                <a target="_blank"  href="https://space.bilibili.com/496960407">
+                                <span class="fa-stack fa-lg">
+                                    <i class="iconfont icon-bilibili-line"></i>
+                                </span>
+                </a>
+            </li>
+        
+
+        
+            <li>
+                <a target="_blank"  href="https://qm.qq.com/q/tVdS3KHYxG">
+                                <span class="fa-stack fa-lg">
+                                    <i class="iconfont icon-QQ"></i>
+                                </span>
+                </a>
+            </li>
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span>/</span>
+        
+        <span><a target="_blank" rel="noopener" href="https://www.gldhn.top">web</a></span>
+        <span>/</span>
+        
+        <span><a target="_blank" rel="noopener" href="https://alist.gldhn.top">ALIST</a></span>
+        <span>/</span>
+        
+        <span><a target="_blank" rel="noopener" href="https://file.gldhn.top">File</a></span>
+        <span>/</span>
+        
+        <span><a target="_blank" rel="noopener" href="https://www.apihz.cn/">接口盒子</a></span>
+        <span>/</span>
+        
+        <span><a target="_blank" rel="noopener" href="https://icp.gov.moe/?keyword=20241241">萌ICP备20241241号</a></span>
+        <span>/</span>
+        
+    </p>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>  Theme <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = ""
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="/jquery.min.3.3.1.js"></script>
+
+<script src="/js/index.js"></script>
+
+<script defer src="https://events.vercount.one/js"></script>
+
+
+
+
+    <script src="https://giscus.app/client.js"
+    data-repo="Guailoudou/pages"
+    data-repo-id="R_kgDOLZFPxQ"
+    data-category="Announcements"
+    data-category-id="DIC_kwDOLZFPxc4CdlRm"
+    data-mapping="pathname"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="bottom"
+    data-theme="preferred_color_scheme"
+    data-lang="zh-CN"
+    crossorigin="anonymous"
+    async>
+</script>
+
+
+
+
+</html>

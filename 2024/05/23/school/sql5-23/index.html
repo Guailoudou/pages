@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang=zh-CN>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:description" content="乖漏斗个人博客，分享教程以及一些我制作的软件等，欢迎访问">
+    <meta property="og:type" content="website">
+    <meta name="description" content="乖漏斗个人博客，分享教程以及一些我制作的软件等，欢迎访问">
+    <meta name="keywords"  content="">
+    <link rel="shortcut icon" href="https://q1.qlogo.cn/g?b=qq&nk=1241593334&s=100">
+    <!-- <link rel="shortcut icon" href="/img/favicon.ico"> -->
+
+    <title>
+        
+        数据库上机作业5-23 - Guailoudou 博客
+        
+    </title><meta name="robots" content="noindex">
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/aircloud.css">
+
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_28hi1hpxx24.css" rel="stylesheet" type="text/css">
+    <link href="//at.alicdn.com/t/c/font_4657326_ux10jqqsarj.css"  rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+
+    
+
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 7.1.1"></head>
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> Guailoudou blog </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar radius">
+            <img src="https://q1.qlogo.cn/g?b=qq&nk=1241593334&s=640" />
+        </div>
+        <div class="name">
+            <i>Guailoudou</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/collect/">
+                    <i class="iconfont icon-shoucang1"></i>
+                    <span>收藏</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-bg" id="search-bg"></div>
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i> Guailoudou blog </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        <div class="post-container">
+    <div class="post-title">
+        数据库上机作业5-23
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2024-05-23 15:21:02</span></span>
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content no-indent">
+        <p>5.23 上机实验 完成教材P141页的上机练习，上传SQL语句截图。</p>
+<p>数据库：<a href="students.sql">下载</a></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">VIEW</span> scd <span class="keyword">AS</span></span><br><span class="line"><span class="keyword">SELECT</span> s.Sno, s.Sname, s.Sdept, e.Cno, c.cname, c.credit</span><br><span class="line"><span class="keyword">FROM</span> student s</span><br><span class="line"><span class="keyword">JOIN</span> sc e <span class="keyword">ON</span> s.Sno <span class="operator">=</span> e.Sno</span><br><span class="line"><span class="keyword">JOIN</span> course c <span class="keyword">ON</span> e.Cno <span class="operator">=</span> c.Cno;</span><br><span class="line">		</span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">VIEW</span> scd2 <span class="keyword">AS</span></span><br><span class="line"><span class="keyword">SELECT</span> s.Sno, s.Sname, n.Cname,n.Grade</span><br><span class="line"><span class="keyword">FROM</span> student s</span><br><span class="line"><span class="keyword">JOIN</span> new_sc n <span class="keyword">ON</span> s.Sname <span class="operator">=</span> n.Sname;</span><br><span class="line"></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">VIEW</span> scd3 <span class="keyword">AS</span></span><br><span class="line"><span class="keyword">SELECT</span> sc.Sno,<span class="built_in">COUNT</span>(sc.Cno) <span class="keyword">AS</span> t</span><br><span class="line"><span class="keyword">FROM</span> sc <span class="keyword">GROUP</span> <span class="keyword">BY</span> Sno;</span><br><span class="line"></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">VIEW</span> scd4 <span class="keyword">AS</span></span><br><span class="line"><span class="keyword">SELECT</span> Sno,<span class="built_in">SUM</span>(Credit) <span class="keyword">AS</span> t2</span><br><span class="line"><span class="keyword">FROM</span> sc </span><br><span class="line"><span class="keyword">JOIN</span> course c <span class="keyword">ON</span> sc.Cno<span class="operator">=</span>c.Cno</span><br><span class="line"><span class="keyword">WHERE</span> Grade<span class="operator">&gt;=</span><span class="number">60</span> <span class="keyword">GROUP</span> <span class="keyword">BY</span> Sno;</span><br><span class="line"><span class="comment">---</span></span><br><span class="line"><span class="keyword">SELECT</span> Sname,Cname,Grade <span class="keyword">FROM</span> scd2 <span class="keyword">WHERE</span> Grade<span class="operator">&gt;=</span><span class="number">90</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> scd3 <span class="keyword">HAVING</span> <span class="built_in">COUNT</span>(<span class="operator">*</span>)<span class="operator">&gt;</span><span class="number">3</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> Sname,t</span><br><span class="line"><span class="keyword">FROM</span> scd3 </span><br><span class="line"><span class="keyword">JOIN</span> student s <span class="keyword">ON</span> scd3.Sno<span class="operator">=</span>s.Sno</span><br><span class="line"><span class="keyword">WHERE</span> Sdept<span class="operator">=</span>&quot;计算机系&quot; <span class="keyword">AND</span> t<span class="operator">&gt;=</span><span class="number">3</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> s4.Sno,Sname,Sdept,t2 <span class="keyword">FROM</span> scd4 s4 </span><br><span class="line"><span class="keyword">JOIN</span> student s <span class="keyword">ON</span> s4.Sno<span class="operator">=</span>s.Sno </span><br><span class="line"><span class="keyword">WHERE</span> t2<span class="operator">&gt;=</span><span class="number">10</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> Sname,Sage,Sdept,t2 <span class="keyword">FROM</span> scd4 </span><br><span class="line"><span class="keyword">JOIN</span> student s <span class="keyword">ON</span> scd4.Sno<span class="operator">=</span>s.Sno</span><br><span class="line"><span class="keyword">WHERE</span> Sage<span class="operator">&gt;=</span><span class="number">20</span> <span class="keyword">AND</span> t2<span class="operator">&gt;=</span><span class="number">10</span>;</span><br><span class="line"><span class="comment">---</span></span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">VIEW</span> scd4 <span class="keyword">AS</span> </span><br><span class="line"><span class="keyword">SELECT</span> Sno,<span class="built_in">SUM</span>(Credit) <span class="keyword">AS</span> t2,<span class="built_in">COUNT</span>(<span class="operator">*</span>) <span class="keyword">AS</span> t3 </span><br><span class="line"><span class="keyword">FROM</span> sc <span class="keyword">JOIN</span> course c <span class="keyword">ON</span> sc.Cno<span class="operator">=</span>c.Cno <span class="keyword">GROUP</span> <span class="keyword">BY</span> Sno;</span><br><span class="line"></span><br><span class="line"><span class="keyword">CREATE</span> INDEX Idx_Sdept <span class="keyword">ON</span> student (Sdept <span class="keyword">DESC</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">UNIQUE</span> INDEX Idx_Sname <span class="keyword">ON</span> student(Sname);</span><br><span class="line"></span><br><span class="line"><span class="keyword">CREATE</span> INDEX Idx_Cname <span class="keyword">ON</span> course(Cname);</span><br><span class="line"></span><br><span class="line"><span class="keyword">CREATE</span> INDEX Idx_SnoCno <span class="keyword">ON</span> sc(Sno,Cno);</span><br><span class="line"></span><br><span class="line"><span class="keyword">DROP</span> INDEX Idx_Sname <span class="keyword">ON</span> student;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<!-- flag of hidden posts -->
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+        <div id="lv-container"></div>
+        <div class="giscus"></div>
+    </div>
+</div>
+    </div>
+</div>
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+        <li>
+            <a target="_blank"  href="https://github.com/Guailoudou">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+            <li>
+                <a target="_blank"  href="https://afdian.com/a/Guailoudou">
+                                <span class="fa-stack fa-lg">
+                                    <i class="iconfont icon-afdian"></i>
+                                </span>
+                </a>
+            </li>
+        
+
+        
+            <li>
+                <a target="_blank"  href="https://space.bilibili.com/496960407">
+                                <span class="fa-stack fa-lg">
+                                    <i class="iconfont icon-bilibili-line"></i>
+                                </span>
+                </a>
+            </li>
+        
+
+        
+            <li>
+                <a target="_blank"  href="https://qm.qq.com/q/tVdS3KHYxG">
+                                <span class="fa-stack fa-lg">
+                                    <i class="iconfont icon-QQ"></i>
+                                </span>
+                </a>
+            </li>
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span>/</span>
+        
+        <span><a target="_blank" rel="noopener" href="https://www.gldhn.top">web</a></span>
+        <span>/</span>
+        
+        <span><a target="_blank" rel="noopener" href="https://alist.gldhn.top">ALIST</a></span>
+        <span>/</span>
+        
+        <span><a target="_blank" rel="noopener" href="https://file.gldhn.top">File</a></span>
+        <span>/</span>
+        
+        <span><a target="_blank" rel="noopener" href="https://www.apihz.cn/">接口盒子</a></span>
+        <span>/</span>
+        
+        <span><a target="_blank" rel="noopener" href="https://icp.gov.moe/?keyword=20241241">萌ICP备20241241号</a></span>
+        <span>/</span>
+        
+    </p>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>  Theme <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = ""
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="/jquery.min.3.3.1.js"></script>
+
+<script src="/js/index.js"></script>
+
+<script defer src="https://events.vercount.one/js"></script>
+
+
+
+
+    <script src="https://giscus.app/client.js"
+    data-repo="Guailoudou/pages"
+    data-repo-id="R_kgDOLZFPxQ"
+    data-category="Announcements"
+    data-category-id="DIC_kwDOLZFPxc4CdlRm"
+    data-mapping="pathname"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="bottom"
+    data-theme="preferred_color_scheme"
+    data-lang="zh-CN"
+    crossorigin="anonymous"
+    async>
+</script>
+
+
+
+
+</html>
