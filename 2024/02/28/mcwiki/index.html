@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang=zh-CN>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:description" content="乖漏斗个人博客，分享教程以及一些我制作的软件等，欢迎访问">
+    <meta property="og:type" content="website">
+    <meta name="description" content="乖漏斗个人博客，分享教程以及一些我制作的软件等，欢迎访问">
+    <meta name="keywords"  content="">
+    <link rel="shortcut icon" href="https://q1.qlogo.cn/g?b=qq&nk=1241593334&s=100">
+    <!-- <link rel="shortcut icon" href="/img/favicon.ico"> -->
+
+    <title>
+        
+        mcwiki从fandom自动跳转到新wiki的Header Editor规则 - Guailoudou 博客
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/aircloud.css">
+
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_28hi1hpxx24.css" rel="stylesheet" type="text/css">
+    <link href="//at.alicdn.com/t/c/font_4657326_ux10jqqsarj.css"  rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+
+    
+
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 7.1.1"></head>
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> Guailoudou blog </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar radius">
+            <img src="https://q1.qlogo.cn/g?b=qq&nk=1241593334&s=640" />
+        </div>
+        <div class="name">
+            <i>Guailoudou</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/collect/">
+                    <i class="iconfont icon-shoucang1"></i>
+                    <span>收藏</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-bg" id="search-bg"></div>
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i> Guailoudou blog </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        <div class="post-container">
+    <div class="post-title">
+        mcwiki从fandom自动跳转到新wiki的Header Editor规则
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2024-02-28 19:53:33</span></span>
+        
+        <span class="attr">标签：/
+        
+        <a class="tag" href="/tags/#教程" title="教程">教程</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content no-indent">
+        <p>mcwiki进行了迁移，但是部分搜索引擎搜索出来依然是fandom的地址，使用如下规则可以访问fandom的地址后自动跳转到行站的地址</p>
+<ul>
+<li><p>下载Header Editor扩展之后新建规则，安装如下填写<br><img src="/2024/02/28/mcwiki/e584cbe3b84c2c5613e45a3f049b887f496960407.png" alt="img"></p>
+<figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">^http(s?)<span class="symbol">://</span>(?<span class="symbol">:minecraft</span>\.|)fandom\.com(.*)/wiki/(.*)</span><br></pre></td></tr></table></figure>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https:<span class="regexp">//</span>zh.minecraft.wiki<span class="regexp">/w/</span><span class="variable">$3</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>效果演示：<br><img src="/2024/02/28/mcwiki/24da33d6b7033c8fd97619ebd0047548496960407.gif" alt="gif"></p>
+</li>
+</ul>
+
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+        <div id="lv-container"></div>
+        <div class="giscus"></div>
+    </div>
+</div>
+    </div>
+</div>
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+        <li>
+            <a target="_blank"  href="https://github.com/Guailoudou">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+            <li>
+                <a target="_blank"  href="https://afdian.com/a/Guailoudou">
+                                <span class="fa-stack fa-lg">
+                                    <i class="iconfont icon-afdian"></i>
+                                </span>
+                </a>
+            </li>
+        
+
+        
+            <li>
+                <a target="_blank"  href="https://space.bilibili.com/496960407">
+                                <span class="fa-stack fa-lg">
+                                    <i class="iconfont icon-bilibili-line"></i>
+                                </span>
+                </a>
+            </li>
+        
+
+        
+            <li>
+                <a target="_blank"  href="https://qm.qq.com/q/tVdS3KHYxG">
+                                <span class="fa-stack fa-lg">
+                                    <i class="iconfont icon-QQ"></i>
+                                </span>
+                </a>
+            </li>
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span>/</span>
+        
+        <span><a target="_blank" rel="noopener" href="https://www.gldhn.top">web</a></span>
+        <span>/</span>
+        
+        <span><a target="_blank" rel="noopener" href="https://alist.gldhn.top">ALIST</a></span>
+        <span>/</span>
+        
+        <span><a target="_blank" rel="noopener" href="https://file.gldhn.top">File</a></span>
+        <span>/</span>
+        
+        <span><a target="_blank" rel="noopener" href="https://www.apihz.cn/">接口盒子</a></span>
+        <span>/</span>
+        
+        <span><a target="_blank" rel="noopener" href="https://icp.gov.moe/?keyword=20241241">萌ICP备20241241号</a></span>
+        <span>/</span>
+        
+    </p>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>  Theme <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = ""
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="/jquery.min.3.3.1.js"></script>
+
+<script src="/js/index.js"></script>
+
+<script defer src="https://events.vercount.one/js"></script>
+
+
+
+
+    <script src="https://giscus.app/client.js"
+    data-repo="Guailoudou/pages"
+    data-repo-id="R_kgDOLZFPxQ"
+    data-category="Announcements"
+    data-category-id="DIC_kwDOLZFPxc4CdlRm"
+    data-mapping="pathname"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="bottom"
+    data-theme="preferred_color_scheme"
+    data-lang="zh-CN"
+    crossorigin="anonymous"
+    async>
+</script>
+
+
+
+
+</html>

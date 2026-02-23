@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang=zh-CN>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:description" content="乖漏斗个人博客，分享教程以及一些我制作的软件等，欢迎访问">
+    <meta property="og:type" content="website">
+    <meta name="description" content="乖漏斗个人博客，分享教程以及一些我制作的软件等，欢迎访问">
+    <meta name="keywords"  content="">
+    <link rel="shortcut icon" href="https://q1.qlogo.cn/g?b=qq&nk=1241593334&s=100">
+    <!-- <link rel="shortcut icon" href="/img/favicon.ico"> -->
+
+    <title>
+        
+        数据库作业4-25 - Guailoudou 博客
+        
+    </title><meta name="robots" content="noindex">
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/aircloud.css">
+
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_28hi1hpxx24.css" rel="stylesheet" type="text/css">
+    <link href="//at.alicdn.com/t/c/font_4657326_ux10jqqsarj.css"  rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+
+    
+
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 7.1.1"></head>
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> Guailoudou blog </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar radius">
+            <img src="https://q1.qlogo.cn/g?b=qq&nk=1241593334&s=640" />
+        </div>
+        <div class="name">
+            <i>Guailoudou</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/collect/">
+                    <i class="iconfont icon-shoucang1"></i>
+                    <span>收藏</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E4%B8%8B%E8%BD%BD"><span class="toc-text">文件下载</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE"><span class="toc-text">题目</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%88%91%E7%9A%84%E7%AD%94%E6%A1%88"><span class="toc-text">我的答案</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-bg" id="search-bg"></div>
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i> Guailoudou blog </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        <div class="post-container">
+    <div class="post-title">
+        数据库作业4-25
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2024-04-25 14:13:24</span></span>
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content no-indent">
+        <h3 id="文件下载"><a href="#文件下载" class="headerlink" title="文件下载"></a>文件下载</h3><ul>
+<li><a href="orderdb.sql">orderdb.sql</a></li>
+<li><a href="%E5%AE%9E%E9%AA%8C-orderDB%E5%8D%95%E8%A1%A8%E6%9F%A5%E8%AF%A2.docx">实验-orderDB单表查询.docx</a></li>
+</ul>
+<h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p>实验二 数据库查询（单表查询）<br>一、实验目的</p>
+<ol>
+<li>掌握SQL查询语句的基本概念和语法</li>
+<li>熟练使用SQL的SELECT语句对表进行查询</li>
+<li>熟练掌握并运用MySQL所提供的的函数</li>
+</ol>
+<p>二、实验环境</p>
+<p>Windows 7操作系统和MySQL数据库软件</p>
+<p>三、实验步骤和内容</p>
+<ol>
+<li>启动MySQL数据库的服务器端及客户端软件。</li>
+<li>右键单击右侧列表的第一项“root@localhost”，在弹出的快捷菜单中选择“从SQL转储文件导入数据库”，将订单数据库脚本OrderDB.sql导入，然后刷新数据库服务器，即可查看OrderDB数据库的相关信息。<br>其中Employee表的属性为员工编号、员工姓名、性别、出生日期、住址、电话、雇佣日期、所属部门、职务、薪水；<br>Customer表的属性为客户号、客户名称、客户住址、客户电话、邮政编码；<br>Product表的属性为商品编号、商品名称、商品类别、商品定价；<br>OrderMaster表的属性为订单编号、客户号、业务员编号、订单日期、订单金额、发票号码；<br>OrderDetail表的属性为订单编号、商品编号、销售数量、成交单价。<br>3.进入OrderDB数据库，开始进行以下SQL查询语句的练习。</li>
+</ol>
+<p>（1）查询全部职工的基本信息。</p>
+<p>（2）查询员工表中所有职工的部门、职工号、姓名和薪水。</p>
+<p>（3）查询全体职工的姓名、年龄、所属部门，并用汉语显示表头信息。</p>
+<p>（4）查询1973年出生且为职员的员工信息。</p>
+<p>（5）查询业务科或财务科的职工姓名、性别和所在部门，仅显示前面5位职工。</p>
+<p>（6）查询薪水为2000元或4000元的职工编号、姓名、所在部门和薪水。</p>
+<p>（7）查询薪水在3000~4000元之间的职工姓名和薪水。</p>
+<p>（8）查询薪水不在3000~4000元之间的职工姓名和薪水。</p>
+<p>（9）查询所有姓张的职工姓名、所属部门和性别。</p>
+<p>（10）查询姓张且全名为3个汉字的职工姓名。</p>
+<p>（11）查询出姓“张”并且姓名的最后一个字为“梅”的员工。</p>
+<p>（12）查询既不在“业务科”也不在“财务科”的职工姓名、性别和所在部门。</p>
+<p>（13）查询2008年被雇用的职工号、姓名、性别、电话号码、出生日期以及年龄。</p>
+<p>（14）查询11月出生的员工编号、姓名、出生日期，并按出生日期的降序输出。</p>
+<p>（15）在订单主表中查询每个业务员的订单数量。</p>
+<p>（16）统计客户号为C20050001的客户的订单数、订单总额和平均订货金额。</p>
+<p>（17）统计每个客户的订单数、订货总额和平均订货金额。</p>
+<p>（18）查询订单中至少包含3种（含3种）以上商品的订单编号及订购次数，且订购的商品数量在3件（含3件）以上。</p>
+<p>（19）统计至少销售了10件以上的商品编号和销售数量。</p>
+<p>（20）统计在业务科工作且在1973年或1967年出生的员工人数和平均工资。</p>
+<p>4.将上述所有查询SQL语句保存至以学号命名的txt文件中，并提交。</p>
+<h3 id="我的答案"><a href="#我的答案" class="headerlink" title="我的答案"></a>我的答案</h3><ol>
+<li><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> employee;</span><br></pre></td></tr></table></figure></li>
+<li><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> department,employeeNo,employeeName,salary <span class="keyword">FROM</span> employee;</span><br></pre></td></tr></table></figure></li>
+<li><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> employeeName 姓名,<span class="keyword">YEAR</span>(<span class="built_in">CURRENT_DATE</span>) <span class="operator">-</span> <span class="keyword">YEAR</span>(birthday) 年龄,department 所属部门 <span class="keyword">FROM</span> employee; </span><br></pre></td></tr></table></figure></li>
+<li><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> employee <span class="keyword">WHERE</span> <span class="keyword">YEAR</span>(birthday)<span class="operator">=</span><span class="number">1973</span> <span class="keyword">AND</span> headShip<span class="operator">=</span><span class="string">&#x27;职员&#x27;</span>;</span><br></pre></td></tr></table></figure></li>
+<li><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> employeeName,sex,department <span class="keyword">FROM</span> employee <span class="keyword">WHERE</span> department<span class="operator">=</span><span class="string">&#x27;业务科&#x27;</span> <span class="keyword">OR</span> department<span class="operator">=</span><span class="string">&#x27;财务科&#x27;</span> LIMIT <span class="number">5</span>;</span><br></pre></td></tr></table></figure></li>
+<li><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> employeeNo,employeeName,department,salary <span class="keyword">FROM</span> employee <span class="keyword">WHERE</span> salary<span class="operator">=</span><span class="number">2000</span> <span class="keyword">OR</span> salary<span class="operator">=</span><span class="number">4000</span>;</span><br></pre></td></tr></table></figure></li>
+<li><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> employeeName,salary <span class="keyword">FROM</span> employee <span class="keyword">WHERE</span> salary<span class="operator">&gt;=</span><span class="number">3000</span> <span class="keyword">AND</span> salary<span class="operator">&lt;=</span><span class="number">4000</span>;</span><br></pre></td></tr></table></figure></li>
+<li><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> employeeName,salary <span class="keyword">FROM</span> employee <span class="keyword">WHERE</span> salary<span class="operator">&lt;</span><span class="number">3000</span> <span class="keyword">OR</span> salary<span class="operator">&gt;</span><span class="number">4000</span>;</span><br></pre></td></tr></table></figure></li>
+<li><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> employeeName,department,sex <span class="keyword">FROM</span> employee <span class="keyword">WHERE</span> employeeName <span class="keyword">LIKE</span> <span class="string">&#x27;张%&#x27;</span>;</span><br></pre></td></tr></table></figure></li>
+<li><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> employeeName <span class="keyword">FROM</span> employee <span class="keyword">WHERE</span> employeeName <span class="keyword">LIKE</span> <span class="string">&#x27;张__&#x27;</span>;</span><br></pre></td></tr></table></figure></li>
+<li><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> employeeName <span class="keyword">FROM</span> employee <span class="keyword">WHERE</span> employeeName <span class="keyword">LIKE</span> <span class="string">&#x27;张%梅&#x27;</span>;</span><br></pre></td></tr></table></figure></li>
+<li><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> employeeName,sex,department <span class="keyword">FROM</span> employee <span class="keyword">WHERE</span> department<span class="operator">!=</span><span class="string">&#x27;业务科&#x27;</span> <span class="keyword">AND</span> department<span class="operator">!=</span><span class="string">&#x27;财务科&#x27;</span>;</span><br></pre></td></tr></table></figure></li>
+<li><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> employeeNo,employeeName,sex,telephone,birthday,<span class="keyword">YEAR</span>(<span class="built_in">CURRENT_DATE</span>)<span class="operator">-</span><span class="keyword">YEAR</span>(birthday) <span class="keyword">FROM</span> employee <span class="keyword">WHERE</span> <span class="keyword">YEAR</span>(hireDate)<span class="operator">=</span><span class="number">2008</span>;</span><br></pre></td></tr></table></figure></li>
+<li><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> employeeNo,employeeName,birthday <span class="keyword">FROM</span> employee <span class="keyword">WHERE</span> <span class="keyword">MONTH</span>(birthday)<span class="operator">=</span><span class="number">11</span> <span class="keyword">ORDER</span> <span class="keyword">BY</span> birthday <span class="keyword">DESC</span>;</span><br></pre></td></tr></table></figure></li>
+<li><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="built_in">COUNT</span>(customerNo),salerNo <span class="keyword">FROM</span> ordermaster <span class="keyword">GROUP</span> <span class="keyword">BY</span> salerNo;</span><br></pre></td></tr></table></figure></li>
+<li><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="built_in">COUNT</span>(customerNo),<span class="built_in">SUM</span>(orderSum),<span class="built_in">AVG</span>(orderSum) <span class="keyword">FROM</span> ordermaster <span class="keyword">WHERE</span> customerNo<span class="operator">=</span><span class="string">&#x27;C20050001&#x27;</span>;</span><br></pre></td></tr></table></figure></li>
+<li><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="built_in">COUNT</span>(customerNo),<span class="built_in">SUM</span>(orderSum),<span class="built_in">AVG</span>(orderSum) <span class="keyword">FROM</span> ordermaster <span class="keyword">GROUP</span> <span class="keyword">BY</span> customerNo;</span><br></pre></td></tr></table></figure></li>
+<li><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> orderNo,<span class="built_in">SUM</span>(quantity) <span class="keyword">FROM</span> orderdetail <span class="keyword">GROUP</span> <span class="keyword">BY</span> orderNo <span class="keyword">HAVING</span> <span class="built_in">COUNT</span>(<span class="keyword">DISTINCT</span> productNo) <span class="operator">&gt;=</span> <span class="number">3</span> <span class="keyword">AND</span> <span class="built_in">SUM</span>(quantity) <span class="operator">&gt;=</span> <span class="number">3</span>;</span><br></pre></td></tr></table></figure></li>
+<li><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> productNo,<span class="built_in">SUM</span>(quantity) <span class="keyword">FROM</span> orderdetail <span class="keyword">GROUP</span> <span class="keyword">BY</span> orderNo <span class="keyword">HAVING</span> <span class="built_in">SUM</span>(quantity) <span class="operator">&gt;=</span> <span class="number">10</span>;</span><br></pre></td></tr></table></figure></li>
+<li><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="built_in">COUNT</span>(employeeName),<span class="built_in">AVG</span>(salary) <span class="keyword">FROM</span> employee <span class="keyword">WHERE</span> department<span class="operator">=</span><span class="string">&#x27;业务科&#x27;</span> <span class="keyword">AND</span> <span class="keyword">YEAR</span>(birthday) <span class="operator">&gt;=</span><span class="number">1967</span> <span class="keyword">AND</span> <span class="keyword">YEAR</span>(birthday) <span class="operator">&lt;=</span> <span class="number">1973</span>;</span><br></pre></td></tr></table></figure></li>
+</ol>
+<!-- flag of hidden posts -->
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+        <div id="lv-container"></div>
+        <div class="giscus"></div>
+    </div>
+</div>
+    </div>
+</div>
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+        <li>
+            <a target="_blank"  href="https://github.com/Guailoudou">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+            <li>
+                <a target="_blank"  href="https://afdian.com/a/Guailoudou">
+                                <span class="fa-stack fa-lg">
+                                    <i class="iconfont icon-afdian"></i>
+                                </span>
+                </a>
+            </li>
+        
+
+        
+            <li>
+                <a target="_blank"  href="https://space.bilibili.com/496960407">
+                                <span class="fa-stack fa-lg">
+                                    <i class="iconfont icon-bilibili-line"></i>
+                                </span>
+                </a>
+            </li>
+        
+
+        
+            <li>
+                <a target="_blank"  href="https://qm.qq.com/q/tVdS3KHYxG">
+                                <span class="fa-stack fa-lg">
+                                    <i class="iconfont icon-QQ"></i>
+                                </span>
+                </a>
+            </li>
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span>/</span>
+        
+        <span><a target="_blank" rel="noopener" href="https://www.gldhn.top">web</a></span>
+        <span>/</span>
+        
+        <span><a target="_blank" rel="noopener" href="https://alist.gldhn.top">ALIST</a></span>
+        <span>/</span>
+        
+        <span><a target="_blank" rel="noopener" href="https://file.gldhn.top">File</a></span>
+        <span>/</span>
+        
+        <span><a target="_blank" rel="noopener" href="https://www.apihz.cn/">接口盒子</a></span>
+        <span>/</span>
+        
+        <span><a target="_blank" rel="noopener" href="https://icp.gov.moe/?keyword=20241241">萌ICP备20241241号</a></span>
+        <span>/</span>
+        
+    </p>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>  Theme <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = ""
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="/jquery.min.3.3.1.js"></script>
+
+<script src="/js/index.js"></script>
+
+<script defer src="https://events.vercount.one/js"></script>
+
+
+
+
+    <script src="https://giscus.app/client.js"
+    data-repo="Guailoudou/pages"
+    data-repo-id="R_kgDOLZFPxQ"
+    data-category="Announcements"
+    data-category-id="DIC_kwDOLZFPxc4CdlRm"
+    data-mapping="pathname"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="bottom"
+    data-theme="preferred_color_scheme"
+    data-lang="zh-CN"
+    crossorigin="anonymous"
+    async>
+</script>
+
+
+
+
+</html>

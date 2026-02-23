@@ -1,0 +1,1088 @@
+<!DOCTYPE html>
+<html lang=zh-CN>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:description" content="乖漏斗个人博客，分享教程以及一些我制作的软件等，欢迎访问">
+    <meta property="og:type" content="website">
+    <meta name="description" content="乖漏斗个人博客，分享教程以及一些我制作的软件等，欢迎访问">
+    <meta name="keywords"  content="">
+    <link rel="shortcut icon" href="https://q1.qlogo.cn/g?b=qq&nk=1241593334&s=100">
+    <!-- <link rel="shortcut icon" href="/img/favicon.ico"> -->
+
+    <title>
+        
+        Minecraft 服务器 JSON-RPC API 文档 - Guailoudou 博客
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/aircloud.css">
+
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_28hi1hpxx24.css" rel="stylesheet" type="text/css">
+    <link href="//at.alicdn.com/t/c/font_4657326_ux10jqqsarj.css"  rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+
+    
+
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 7.1.1"></head>
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> Guailoudou blog </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar radius">
+            <img src="https://q1.qlogo.cn/g?b=qq&nk=1241593334&s=640" />
+        </div>
+        <div class="name">
+            <i>Guailoudou</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/collect/">
+                    <i class="iconfont icon-shoucang1"></i>
+                    <span>收藏</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Minecraft-%E6%9C%8D%E5%8A%A1%E5%99%A8-JSON-RPC-API-%E6%96%87%E6%A1%A3"><span class="toc-text">Minecraft 服务器 JSON-RPC API 文档</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A6%82%E8%BF%B0"><span class="toc-text">概述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%B9%E6%B3%95-Methods"><span class="toc-text">方法 (Methods)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AE%A1%E7%90%86"><span class="toc-text">服务器管理</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#minecraft-server-status"><span class="toc-text">minecraft:server&#x2F;status</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#minecraft-server-save"><span class="toc-text">minecraft:server&#x2F;save</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#minecraft-server-stop"><span class="toc-text">minecraft:server&#x2F;stop</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#minecraft-server-system-message"><span class="toc-text">minecraft:server&#x2F;system_message</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%8E%A9%E5%AE%B6%E7%AE%A1%E7%90%86"><span class="toc-text">玩家管理</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#minecraft-players"><span class="toc-text">minecraft:players</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#minecraft-players-kick"><span class="toc-text">minecraft:players&#x2F;kick</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#minecraft-allowlist"><span class="toc-text">minecraft:allowlist</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#minecraft-allowlist-set"><span class="toc-text">minecraft:allowlist&#x2F;set</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#minecraft-allowlist-add"><span class="toc-text">minecraft:allowlist&#x2F;add</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#minecraft-allowlist-remove"><span class="toc-text">minecraft:allowlist&#x2F;remove</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#minecraft-allowlist-clear"><span class="toc-text">minecraft:allowlist&#x2F;clear</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#minecraft-bans"><span class="toc-text">minecraft:bans</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#minecraft-bans-set"><span class="toc-text">minecraft:bans&#x2F;set</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#minecraft-bans-add"><span class="toc-text">minecraft:bans&#x2F;add</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#minecraft-bans-remove"><span class="toc-text">minecraft:bans&#x2F;remove</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#minecraft-bans-clear"><span class="toc-text">minecraft:bans&#x2F;clear</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#minecraft-ip-bans"><span class="toc-text">minecraft:ip_bans</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#minecraft-ip-bans-set"><span class="toc-text">minecraft:ip_bans&#x2F;set</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#minecraft-ip-bans-add"><span class="toc-text">minecraft:ip_bans&#x2F;add</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#minecraft-ip-bans-remove"><span class="toc-text">minecraft:ip_bans&#x2F;remove</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#minecraft-ip-bans-clear"><span class="toc-text">minecraft:ip_bans&#x2F;clear</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#minecraft-operators"><span class="toc-text">minecraft:operators</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#minecraft-operators-set"><span class="toc-text">minecraft:operators&#x2F;set</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#minecraft-operators-add"><span class="toc-text">minecraft:operators&#x2F;add</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#minecraft-operators-remove"><span class="toc-text">minecraft:operators&#x2F;remove</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#minecraft-operators-clear"><span class="toc-text">minecraft:operators&#x2F;clear</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%AE%BE%E7%BD%AE"><span class="toc-text">服务器设置</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#minecraft-serversettings-autosave"><span class="toc-text">minecraft:serversettings&#x2F;autosave</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#minecraft-serversettings-autosave-set"><span class="toc-text">minecraft:serversettings&#x2F;autosave&#x2F;set</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#minecraft-serversettings-difficulty"><span class="toc-text">minecraft:serversettings&#x2F;difficulty</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#minecraft-serversettings-difficulty-set"><span class="toc-text">minecraft:serversettings&#x2F;difficulty&#x2F;set</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#minecraft-serversettings-enforce-allowlist"><span class="toc-text">minecraft:serversettings&#x2F;enforce_allowlist</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#minecraft-serversettings-enforce-allowlist-set"><span class="toc-text">minecraft:serversettings&#x2F;enforce_allowlist&#x2F;set</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#minecraft-serversettings-use-allowlist"><span class="toc-text">minecraft:serversettings&#x2F;use_allowlist</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#minecraft-serversettings-use-allowlist-set"><span class="toc-text">minecraft:serversettings&#x2F;use_allowlist&#x2F;set</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#minecraft-serversettings-max-players"><span class="toc-text">minecraft:serversettings&#x2F;max_players</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#minecraft-serversettings-max-players-set"><span class="toc-text">minecraft:serversettings&#x2F;max_players&#x2F;set</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#minecraft-serversettings-pause-when-empty-seconds"><span class="toc-text">minecraft:serversettings&#x2F;pause_when_empty_seconds</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#minecraft-serversettings-pause-when-empty-seconds-set"><span class="toc-text">minecraft:serversettings&#x2F;pause_when_empty_seconds&#x2F;set</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#minecraft-serversettings-player-idle-timeout"><span class="toc-text">minecraft:serversettings&#x2F;player_idle_timeout</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#minecraft-serversettings-player-idle-timeout-set"><span class="toc-text">minecraft:serversettings&#x2F;player_idle_timeout&#x2F;set</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#minecraft-serversettings-allow-flight"><span class="toc-text">minecraft:serversettings&#x2F;allow_flight</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#minecraft-serversettings-allow-flight-set"><span class="toc-text">minecraft:serversettings&#x2F;allow_flight&#x2F;set</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#minecraft-serversettings-motd"><span class="toc-text">minecraft:serversettings&#x2F;motd</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#minecraft-serversettings-motd-set"><span class="toc-text">minecraft:serversettings&#x2F;motd&#x2F;set</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#minecraft-serversettings-spawn-protection-radius"><span class="toc-text">minecraft:serversettings&#x2F;spawn_protection_radius</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#minecraft-serversettings-spawn-protection-radius-set"><span class="toc-text">minecraft:serversettings&#x2F;spawn_protection_radius&#x2F;set</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#minecraft-serversettings-force-game-mode"><span class="toc-text">minecraft:serversettings&#x2F;force_game_mode</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#minecraft-serversettings-force-game-mode-set"><span class="toc-text">minecraft:serversettings&#x2F;force_game_mode&#x2F;set</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#minecraft-serversettings-game-mode"><span class="toc-text">minecraft:serversettings&#x2F;game_mode</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#minecraft-serversettings-game-mode-set"><span class="toc-text">minecraft:serversettings&#x2F;game_mode&#x2F;set</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#minecraft-serversettings-view-distance"><span class="toc-text">minecraft:serversettings&#x2F;view_distance</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#minecraft-serversettings-view-distance-set"><span class="toc-text">minecraft:serversettings&#x2F;view_distance&#x2F;set</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#minecraft-serversettings-simulation-distance"><span class="toc-text">minecraft:serversettings&#x2F;simulation_distance</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#minecraft-serversettings-simulation-distance-set"><span class="toc-text">minecraft:serversettings&#x2F;simulation_distance&#x2F;set</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#minecraft-serversettings-accept-transfers"><span class="toc-text">minecraft:serversettings&#x2F;accept_transfers</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#minecraft-serversettings-accept-transfers-set"><span class="toc-text">minecraft:serversettings&#x2F;accept_transfers&#x2F;set</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#minecraft-serversettings-status-heartbeat-interval"><span class="toc-text">minecraft:serversettings&#x2F;status_heartbeat_interval</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#minecraft-serversettings-status-heartbeat-interval-set"><span class="toc-text">minecraft:serversettings&#x2F;status_heartbeat_interval&#x2F;set</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#minecraft-serversettings-operator-user-permission-level"><span class="toc-text">minecraft:serversettings&#x2F;operator_user_permission_level</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#minecraft-serversettings-operator-user-permission-level-set"><span class="toc-text">minecraft:serversettings&#x2F;operator_user_permission_level&#x2F;set</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#minecraft-serversettings-hide-online-players"><span class="toc-text">minecraft:serversettings&#x2F;hide_online_players</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#minecraft-serversettings-hide-online-players-set"><span class="toc-text">minecraft:serversettings&#x2F;hide_online_players&#x2F;set</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#minecraft-serversettings-status-replies"><span class="toc-text">minecraft:serversettings&#x2F;status_replies</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#minecraft-serversettings-status-replies-set"><span class="toc-text">minecraft:serversettings&#x2F;status_replies&#x2F;set</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#minecraft-serversettings-entity-broadcast-range"><span class="toc-text">minecraft:serversettings&#x2F;entity_broadcast_range</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#minecraft-serversettings-entity-broadcast-range-set"><span class="toc-text">minecraft:serversettings&#x2F;entity_broadcast_range&#x2F;set</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B8%B8%E6%88%8F%E8%A7%84%E5%88%99"><span class="toc-text">游戏规则</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#minecraft-gamerules"><span class="toc-text">minecraft:gamerules</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#minecraft-gamerules-update"><span class="toc-text">minecraft:gamerules&#x2F;update</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%9A%E7%9F%A5-Notifications"><span class="toc-text">通知 (Notifications)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%84%E4%BB%B6-Components"><span class="toc-text">组件 (Components)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-text">数据类型</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Player"><span class="toc-text">Player</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Operator"><span class="toc-text">Operator</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#UserBan"><span class="toc-text">UserBan</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#IpBan"><span class="toc-text">IpBan</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#IncomingIpBan"><span class="toc-text">IncomingIpBan</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#ServerState"><span class="toc-text">ServerState</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Version"><span class="toc-text">Version</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Message"><span class="toc-text">Message</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#SystemMessage"><span class="toc-text">SystemMessage</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#KickPlayer"><span class="toc-text">KickPlayer</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#UntypedGameRule"><span class="toc-text">UntypedGameRule</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#TypedGameRule"><span class="toc-text">TypedGameRule</span></a></li></ol></li></ol></li></ol></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-bg" id="search-bg"></div>
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i> Guailoudou blog </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        <div class="post-container">
+    <div class="post-title">
+        Minecraft 服务器 JSON-RPC API 文档
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2025-08-27 02:59:34</span></span>
+        
+        <span class="attr">标签：/
+        
+        <a class="tag" href="/tags/#文档" title="文档">文档</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content no-indent">
+        <h1 id="Minecraft-服务器-JSON-RPC-API-文档"><a href="#Minecraft-服务器-JSON-RPC-API-文档" class="headerlink" title="Minecraft 服务器 JSON-RPC API 文档"></a>Minecraft 服务器 JSON-RPC API 文档</h1><p><strong>版本：</strong> 1.0.0<br><strong>OpenRPC 版本：</strong> 1.3.2  </p>
+<p>该文档内容由AI根据发送<code>&#123;&quot;id&quot;:1,&quot;method&quot;:&quot;rpc.discover&quot;&#125;</code>返回的内容生成。</p>
+<hr>
+<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>本 API 提供了对 Minecraft 服务器的远程管理和监控功能。它遵循 JSON-RPC 2.0 规范，允许客户端通过 RPC 调用查询服务器状态、管理玩家（允许列表、封禁、踢出、操作员）、修改服务器设置和游戏规则等。</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//这是一个示例请求体</span></span><br><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;id&quot;</span><span class="punctuation">:</span> <span class="number">1</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;method&quot;</span><span class="punctuation">:</span> <span class="string">&quot;minecraft:players/kick&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;params&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">        <span class="punctuation">&#123;</span></span><br><span class="line">            </span><br><span class="line">            <span class="attr">&quot;players&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">                <span class="punctuation">&#123;</span></span><br><span class="line">                    <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;Guailoudou&quot;</span><span class="punctuation">,</span></span><br><span class="line">                    <span class="attr">&quot;id&quot;</span><span class="punctuation">:</span> <span class="string">&quot;bd8c4b93-6ee2-4bf5-a20e-a7ebb5a6c624&quot;</span></span><br><span class="line">                <span class="punctuation">&#125;</span></span><br><span class="line">            <span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;message&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">                <span class="attr">&quot;literal&quot;</span><span class="punctuation">:</span> <span class="string">&quot;You have been kicked.&quot;</span></span><br><span class="line">            <span class="punctuation">&#125;</span></span><br><span class="line">               </span><br><span class="line">        <span class="punctuation">&#125;</span></span><br><span class="line">    <span class="punctuation">]</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p>返回数据的原始内容：<a href="wsbackapi.json">wsbackapi.json</a></p>
+<p>原始内容可视化页面：<a href="wsbackapi.html">wsbackapi.html</a></p>
+<hr>
+<h2 id="方法-Methods"><a href="#方法-Methods" class="headerlink" title="方法 (Methods)"></a>方法 (Methods)</h2><h3 id="服务器管理"><a href="#服务器管理" class="headerlink" title="服务器管理"></a>服务器管理</h3><h4 id="minecraft-server-status"><a href="#minecraft-server-status" class="headerlink" title="minecraft:server/status"></a><code>minecraft:server/status</code></h4><p>获取服务器当前状态。</p>
+<ul>
+<li><strong>参数:</strong> 无</li>
+<li><strong>返回值:</strong><ul>
+<li><code>status</code> (object): 服务器状态对象<ul>
+<li><code>started</code> (boolean): 服务器是否正在运行</li>
+<li><code>players</code> (array[Player]): 当前在线玩家列表</li>
+<li><code>version</code> (object):<ul>
+<li><code>name</code> (string): 服务器版本名称</li>
+<li><code>protocol</code> (integer): 协议版本号</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="minecraft-server-save"><a href="#minecraft-server-save" class="headerlink" title="minecraft:server/save"></a><code>minecraft:server/save</code></h4><p>保存服务器状态（世界数据）。</p>
+<ul>
+<li><strong>参数:</strong><ul>
+<li><code>flush</code> (boolean, required): 是否立即强制写入磁盘</li>
+</ul>
+</li>
+<li><strong>返回值:</strong><ul>
+<li><code>saving</code> (boolean): 保存操作是否已启动</li>
+</ul>
+</li>
+</ul>
+<h4 id="minecraft-server-stop"><a href="#minecraft-server-stop" class="headerlink" title="minecraft:server/stop"></a><code>minecraft:server/stop</code></h4><p>停止服务器。</p>
+<ul>
+<li><strong>参数:</strong> 无</li>
+<li><strong>返回值:</strong><ul>
+<li><code>stopping</code> (boolean): 停止操作是否已启动</li>
+</ul>
+</li>
+</ul>
+<h4 id="minecraft-server-system-message"><a href="#minecraft-server-system-message" class="headerlink" title="minecraft:server/system_message"></a><code>minecraft:server/system_message</code></h4><p>向服务器或特定玩家发送系统消息。</p>
+<ul>
+<li><strong>参数:</strong><ul>
+<li><code>message</code> (SystemMessage, required): 消息对象<ul>
+<li><code>message</code> (Message): 要发送的消息内容</li>
+<li><code>overlay</code> (boolean): 消息是否显示在屏幕中央（类似标题）</li>
+<li><code>receivingPlayers</code> (array[Player]): 接收消息的玩家列表。如果为空，则发送给所有玩家。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>返回值:</strong><ul>
+<li><code>sent</code> (boolean): 消息是否已成功发送</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="玩家管理"><a href="#玩家管理" class="headerlink" title="玩家管理"></a>玩家管理</h3><h4 id="minecraft-players"><a href="#minecraft-players" class="headerlink" title="minecraft:players"></a><code>minecraft:players</code></h4><p>获取所有当前连接的玩家。</p>
+<ul>
+<li><strong>参数:</strong> 无</li>
+<li><strong>返回值:</strong><ul>
+<li><code>players</code> (array[Player]): 在线玩家列表</li>
+</ul>
+</li>
+</ul>
+<h4 id="minecraft-players-kick"><a href="#minecraft-players-kick" class="headerlink" title="minecraft:players/kick"></a><code>minecraft:players/kick</code></h4><p>踢出指定玩家。</p>
+<ul>
+<li><strong>参数:</strong><ul>
+<li><code>kick</code> (array[KickPlayer], required): 要踢出的玩家及其原因列表<ul>
+<li><code>players</code> (array[Player]): 被踢玩家</li>
+<li><code>message</code> (Message): 踢出原因消息</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>返回值:</strong><ul>
+<li><code>kicked</code> (array[Player]): 成功被踢出的玩家列表</li>
+</ul>
+</li>
+</ul>
+<h4 id="minecraft-allowlist"><a href="#minecraft-allowlist" class="headerlink" title="minecraft:allowlist"></a><code>minecraft:allowlist</code></h4><p>获取允许列表。</p>
+<ul>
+<li><strong>参数:</strong> 无</li>
+<li><strong>返回值:</strong><ul>
+<li><code>allowlist</code> (array[Player]): 允许列表中的玩家</li>
+</ul>
+</li>
+</ul>
+<h4 id="minecraft-allowlist-set"><a href="#minecraft-allowlist-set" class="headerlink" title="minecraft:allowlist/set"></a><code>minecraft:allowlist/set</code></h4><p>设置整个允许列表（替换现有列表）。</p>
+<ul>
+<li><strong>参数:</strong><ul>
+<li><code>players</code> (array[Player], required): 新的允许列表</li>
+</ul>
+</li>
+<li><strong>返回值:</strong><ul>
+<li><code>allowlist</code> (array[Player]): 设置后的新允许列表</li>
+</ul>
+</li>
+</ul>
+<h4 id="minecraft-allowlist-add"><a href="#minecraft-allowlist-add" class="headerlink" title="minecraft:allowlist/add"></a><code>minecraft:allowlist/add</code></h4><p>向允许列表添加玩家。</p>
+<ul>
+<li><strong>参数:</strong><ul>
+<li><code>add</code> (array[Player], required): 要添加的玩家列表</li>
+</ul>
+</li>
+<li><strong>返回值:</strong><ul>
+<li><code>allowlist</code> (array[Player]): 添加后更新的允许列表</li>
+</ul>
+</li>
+</ul>
+<h4 id="minecraft-allowlist-remove"><a href="#minecraft-allowlist-remove" class="headerlink" title="minecraft:allowlist/remove"></a><code>minecraft:allowlist/remove</code></h4><p>从允许列表中移除玩家。</p>
+<ul>
+<li><strong>参数:</strong><ul>
+<li><code>remove</code> (array[Player], required): 要移除的玩家列表</li>
+</ul>
+</li>
+<li><strong>返回值:</strong><ul>
+<li><code>allowlist</code> (array[Player]): 移除后更新的允许列表</li>
+</ul>
+</li>
+</ul>
+<h4 id="minecraft-allowlist-clear"><a href="#minecraft-allowlist-clear" class="headerlink" title="minecraft:allowlist/clear"></a><code>minecraft:allowlist/clear</code></h4><p>清空允许列表。</p>
+<ul>
+<li><strong>参数:</strong> 无</li>
+<li><strong>返回值:</strong><ul>
+<li><code>allowlist</code> (array[Player]): 清空后的允许列表（应为空数组）</li>
+</ul>
+</li>
+</ul>
+<h4 id="minecraft-bans"><a href="#minecraft-bans" class="headerlink" title="minecraft:bans"></a><code>minecraft:bans</code></h4><p>获取用户封禁列表。</p>
+<ul>
+<li><strong>参数:</strong> 无</li>
+<li><strong>返回值:</strong><ul>
+<li><code>banlist</code> (array[UserBan]): 被封禁的用户列表</li>
+</ul>
+</li>
+</ul>
+<h4 id="minecraft-bans-set"><a href="#minecraft-bans-set" class="headerlink" title="minecraft:bans/set"></a><code>minecraft:bans/set</code></h4><p>设置整个用户封禁列表（替换现有列表）。</p>
+<ul>
+<li><strong>参数:</strong><ul>
+<li><code>bans</code> (array[UserBan], required): 新的封禁列表</li>
+</ul>
+</li>
+<li><strong>返回值:</strong><ul>
+<li><code>banlist</code> (array[UserBan]): 设置后的新封禁列表</li>
+</ul>
+</li>
+</ul>
+<h4 id="minecraft-bans-add"><a href="#minecraft-bans-add" class="headerlink" title="minecraft:bans/add"></a><code>minecraft:bans/add</code></h4><p>封禁指定玩家。</p>
+<ul>
+<li><strong>参数:</strong><ul>
+<li><code>add</code> (array[UserBan], required): 要封禁的玩家列表<ul>
+<li><code>player</code> (Player): 被封禁的玩家</li>
+<li><code>reason</code> (string): 封禁原因</li>
+<li><code>expires</code> (string): 封禁过期时间（ISO 8601 格式，或 “forever”）</li>
+<li><code>source</code> (string): 执行封禁的来源（如管理员名）</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>返回值:</strong><ul>
+<li><code>banlist</code> (array[UserBan]): 添加后更新的封禁列表</li>
+</ul>
+</li>
+</ul>
+<h4 id="minecraft-bans-remove"><a href="#minecraft-bans-remove" class="headerlink" title="minecraft:bans/remove"></a><code>minecraft:bans/remove</code></h4><p>解除对指定玩家的封禁。</p>
+<ul>
+<li><strong>参数:</strong><ul>
+<li><code>remove</code> (array[Player], required): 要解封的玩家列表</li>
+</ul>
+</li>
+<li><strong>返回值:</strong><ul>
+<li><code>banlist</code> (array[UserBan]): 解封后更新的封禁列表</li>
+</ul>
+</li>
+</ul>
+<h4 id="minecraft-bans-clear"><a href="#minecraft-bans-clear" class="headerlink" title="minecraft:bans/clear"></a><code>minecraft:bans/clear</code></h4><p>清空用户封禁列表。</p>
+<ul>
+<li><strong>参数:</strong> 无</li>
+<li><strong>返回值:</strong><ul>
+<li><code>banlist</code> (array[UserBan]): 清空后的封禁列表（应为空数组）</li>
+</ul>
+</li>
+</ul>
+<h4 id="minecraft-ip-bans"><a href="#minecraft-ip-bans" class="headerlink" title="minecraft:ip_bans"></a><code>minecraft:ip_bans</code></h4><p>获取 IP 封禁列表。</p>
+<ul>
+<li><strong>参数:</strong> 无</li>
+<li><strong>返回值:</strong><ul>
+<li><code>banlist</code> (array[IpBan]): 被封禁的 IP 地址列表</li>
+</ul>
+</li>
+</ul>
+<h4 id="minecraft-ip-bans-set"><a href="#minecraft-ip-bans-set" class="headerlink" title="minecraft:ip_bans/set"></a><code>minecraft:ip_bans/set</code></h4><p>设置整个 IP 封禁列表（替换现有列表）。</p>
+<ul>
+<li><strong>参数:</strong><ul>
+<li><code>banlist</code> (array[IpBan], required): 新的 IP 封禁列表</li>
+</ul>
+</li>
+<li><strong>返回值:</strong><ul>
+<li><code>banlist</code> (array[IpBan]): 设置后的新 IP 封禁列表</li>
+</ul>
+</li>
+</ul>
+<h4 id="minecraft-ip-bans-add"><a href="#minecraft-ip-bans-add" class="headerlink" title="minecraft:ip_bans/add"></a><code>minecraft:ip_bans/add</code></h4><p>封禁指定 IP 地址。</p>
+<ul>
+<li><strong>参数:</strong><ul>
+<li><code>add</code> (array[IncomingIpBan], required): 要封禁的 IP 列表<ul>
+<li><code>ip</code> (string): 要封禁的 IP 地址</li>
+<li><code>reason</code> (string): 封禁原因</li>
+<li><code>expires</code> (string): 封禁过期时间</li>
+<li><code>source</code> (string): 执行封禁的来源</li>
+<li><code>player</code> (Player): 关联的玩家（可选）</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>返回值:</strong><ul>
+<li><code>banlist</code> (array[IpBan]): 添加后更新的 IP 封禁列表</li>
+</ul>
+</li>
+</ul>
+<h4 id="minecraft-ip-bans-remove"><a href="#minecraft-ip-bans-remove" class="headerlink" title="minecraft:ip_bans/remove"></a><code>minecraft:ip_bans/remove</code></h4><p>解除对指定 IP 地址的封禁。</p>
+<ul>
+<li><strong>参数:</strong><ul>
+<li><code>ip</code> (array[string], required): 要解封的 IP 地址列表</li>
+</ul>
+</li>
+<li><strong>返回值:</strong><ul>
+<li><code>banlist</code> (array[IpBan]): 解封后更新的 IP 封禁列表</li>
+</ul>
+</li>
+</ul>
+<h4 id="minecraft-ip-bans-clear"><a href="#minecraft-ip-bans-clear" class="headerlink" title="minecraft:ip_bans/clear"></a><code>minecraft:ip_bans/clear</code></h4><p>清空 IP 封禁列表。</p>
+<ul>
+<li><strong>参数:</strong> 无</li>
+<li><strong>返回值:</strong><ul>
+<li><code>banlist</code> (array[IpBan]): 清空后的 IP 封禁列表（应为空数组）</li>
+</ul>
+</li>
+</ul>
+<h4 id="minecraft-operators"><a href="#minecraft-operators" class="headerlink" title="minecraft:operators"></a><code>minecraft:operators</code></h4><p>获取所有操作员（OP）玩家。</p>
+<ul>
+<li><strong>参数:</strong> 无</li>
+<li><strong>返回值:</strong><ul>
+<li><code>operators</code> (array[Operator]): 操作员列表</li>
+</ul>
+</li>
+</ul>
+<h4 id="minecraft-operators-set"><a href="#minecraft-operators-set" class="headerlink" title="minecraft:operators/set"></a><code>minecraft:operators/set</code></h4><p>设置整个操作员列表（替换现有列表）。</p>
+<ul>
+<li><strong>参数:</strong><ul>
+<li><code>operators</code> (array[Operator], required): 新的操作员列表</li>
+</ul>
+</li>
+<li><strong>返回值:</strong><ul>
+<li><code>operators</code> (array[Operator]): 设置后的新操作员列表</li>
+</ul>
+</li>
+</ul>
+<h4 id="minecraft-operators-add"><a href="#minecraft-operators-add" class="headerlink" title="minecraft:operators/add"></a><code>minecraft:operators/add</code></h4><p>授予玩家操作员权限。</p>
+<ul>
+<li><strong>参数:</strong><ul>
+<li><code>add</code> (array[Operator], required): 要授予 OP 权限的玩家列表<ul>
+<li><code>player</code> (Player): 被授予权限的玩家</li>
+<li><code>permissionLevel</code> (integer): 权限等级 (1-4)</li>
+<li><code>bypassesPlayerLimit</code> (boolean): 是否绕过玩家数量上限</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>返回值:</strong><ul>
+<li><code>operators</code> (array[Operator]): 添加后更新的操作员列表</li>
+</ul>
+</li>
+</ul>
+<h4 id="minecraft-operators-remove"><a href="#minecraft-operators-remove" class="headerlink" title="minecraft:operators/remove"></a><code>minecraft:operators/remove</code></h4><p>撤销玩家的操作员权限。</p>
+<ul>
+<li><strong>参数:</strong><ul>
+<li><code>remove</code> (array[Player], required): 要撤销 OP 权限的玩家列表</li>
+</ul>
+</li>
+<li><strong>返回值:</strong><ul>
+<li><code>operators</code> (array[Operator]): 撤销后更新的操作员列表</li>
+</ul>
+</li>
+</ul>
+<h4 id="minecraft-operators-clear"><a href="#minecraft-operators-clear" class="headerlink" title="minecraft:operators/clear"></a><code>minecraft:operators/clear</code></h4><p>撤销所有玩家的操作员权限。</p>
+<ul>
+<li><strong>参数:</strong> 无</li>
+<li><strong>返回值:</strong><ul>
+<li><code>operators</code> (array[Operator]): 清空后的操作员列表（应为空数组）</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="服务器设置"><a href="#服务器设置" class="headerlink" title="服务器设置"></a>服务器设置</h3><h4 id="minecraft-serversettings-autosave"><a href="#minecraft-serversettings-autosave" class="headerlink" title="minecraft:serversettings/autosave"></a><code>minecraft:serversettings/autosave</code></h4><p>获取自动保存是否启用。</p>
+<ul>
+<li><strong>参数:</strong> 无</li>
+<li><strong>返回值:</strong><ul>
+<li><code>enabled</code> (boolean): 自动保存是否启用</li>
+</ul>
+</li>
+</ul>
+<h4 id="minecraft-serversettings-autosave-set"><a href="#minecraft-serversettings-autosave-set" class="headerlink" title="minecraft:serversettings/autosave/set"></a><code>minecraft:serversettings/autosave/set</code></h4><p>启用或禁用自动保存。</p>
+<ul>
+<li><strong>参数:</strong><ul>
+<li><code>enable</code> (boolean, required): 是否启用自动保存</li>
+</ul>
+</li>
+<li><strong>返回值:</strong><ul>
+<li><code>enabled</code> (boolean): 设置后的新状态</li>
+</ul>
+</li>
+</ul>
+<h4 id="minecraft-serversettings-difficulty"><a href="#minecraft-serversettings-difficulty" class="headerlink" title="minecraft:serversettings/difficulty"></a><code>minecraft:serversettings/difficulty</code></h4><p>获取当前游戏难度。</p>
+<ul>
+<li><strong>参数:</strong> 无</li>
+<li><strong>返回值:</strong><ul>
+<li><code>difficulty</code> (string): 难度 (“peaceful”, “easy”, “normal”, “hard”)</li>
+</ul>
+</li>
+</ul>
+<h4 id="minecraft-serversettings-difficulty-set"><a href="#minecraft-serversettings-difficulty-set" class="headerlink" title="minecraft:serversettings/difficulty/set"></a><code>minecraft:serversettings/difficulty/set</code></h4><p>设置游戏难度。</p>
+<ul>
+<li><strong>参数:</strong><ul>
+<li><code>difficulty</code> (string, required): 新的难度级别</li>
+</ul>
+</li>
+<li><strong>返回值:</strong><ul>
+<li><code>difficulty</code> (string): 设置后的新难度</li>
+</ul>
+</li>
+</ul>
+<h4 id="minecraft-serversettings-enforce-allowlist"><a href="#minecraft-serversettings-enforce-allowlist" class="headerlink" title="minecraft:serversettings/enforce_allowlist"></a><code>minecraft:serversettings/enforce_allowlist</code></h4><p>获取是否强制执行允许列表（被移除的玩家是否立即被踢出）。</p>
+<ul>
+<li><strong>参数:</strong> 无</li>
+<li><strong>返回值:</strong><ul>
+<li><code>enforced</code> (boolean): 是否强制执行</li>
+</ul>
+</li>
+</ul>
+<h4 id="minecraft-serversettings-enforce-allowlist-set"><a href="#minecraft-serversettings-enforce-allowlist-set" class="headerlink" title="minecraft:serversettings/enforce_allowlist/set"></a><code>minecraft:serversettings/enforce_allowlist/set</code></h4><p>启用或禁用允许列表的强制执行。</p>
+<ul>
+<li><strong>参数:</strong><ul>
+<li><code>enforce</code> (boolean, required): 是否强制执行</li>
+</ul>
+</li>
+<li><strong>返回值:</strong><ul>
+<li><code>enforced</code> (boolean): 设置后的新状态</li>
+</ul>
+</li>
+</ul>
+<h4 id="minecraft-serversettings-use-allowlist"><a href="#minecraft-serversettings-use-allowlist" class="headerlink" title="minecraft:serversettings/use_allowlist"></a><code>minecraft:serversettings/use_allowlist</code></h4><p>获取是否启用了允许列表（仅允许列表中的玩家加入）。</p>
+<ul>
+<li><strong>参数:</strong> 无</li>
+<li><strong>返回值:</strong><ul>
+<li><code>used</code> (boolean): 允许列表是否启用</li>
+</ul>
+</li>
+</ul>
+<h4 id="minecraft-serversettings-use-allowlist-set"><a href="#minecraft-serversettings-use-allowlist-set" class="headerlink" title="minecraft:serversettings/use_allowlist/set"></a><code>minecraft:serversettings/use_allowlist/set</code></h4><p>启用或禁用允许列表功能。</p>
+<ul>
+<li><strong>参数:</strong><ul>
+<li><code>use</code> (boolean, required): 是否启用允许列表</li>
+</ul>
+</li>
+<li><strong>返回值:</strong><ul>
+<li><code>used</code> (boolean): 设置后的新状态</li>
+</ul>
+</li>
+</ul>
+<h4 id="minecraft-serversettings-max-players"><a href="#minecraft-serversettings-max-players" class="headerlink" title="minecraft:serversettings/max_players"></a><code>minecraft:serversettings/max_players</code></h4><p>获取服务器最大玩家数量。</p>
+<ul>
+<li><strong>参数:</strong> 无</li>
+<li><strong>返回值:</strong><ul>
+<li><code>max</code> (integer): 最大玩家数</li>
+</ul>
+</li>
+</ul>
+<h4 id="minecraft-serversettings-max-players-set"><a href="#minecraft-serversettings-max-players-set" class="headerlink" title="minecraft:serversettings/max_players/set"></a><code>minecraft:serversettings/max_players/set</code></h4><p>设置服务器最大玩家数量。</p>
+<ul>
+<li><strong>参数:</strong><ul>
+<li><code>max</code> (integer, required): 新的最大玩家数</li>
+</ul>
+</li>
+<li><strong>返回值:</strong><ul>
+<li><code>max</code> (integer): 设置后的新最大玩家数</li>
+</ul>
+</li>
+</ul>
+<h4 id="minecraft-serversettings-pause-when-empty-seconds"><a href="#minecraft-serversettings-pause-when-empty-seconds" class="headerlink" title="minecraft:serversettings/pause_when_empty_seconds"></a><code>minecraft:serversettings/pause_when_empty_seconds</code></h4><p>获取服务器在无玩家在线时自动暂停前的等待秒数。</p>
+<ul>
+<li><strong>参数:</strong> 无</li>
+<li><strong>返回值:</strong><ul>
+<li><code>seconds</code> (integer): 等待秒数</li>
+</ul>
+</li>
+</ul>
+<h4 id="minecraft-serversettings-pause-when-empty-seconds-set"><a href="#minecraft-serversettings-pause-when-empty-seconds-set" class="headerlink" title="minecraft:serversettings/pause_when_empty_seconds/set"></a><code>minecraft:serversettings/pause_when_empty_seconds/set</code></h4><p>设置服务器在无玩家在线时自动暂停前的等待秒数。</p>
+<ul>
+<li><strong>参数:</strong><ul>
+<li><code>seconds</code> (integer, required): 新的等待秒数</li>
+</ul>
+</li>
+<li><strong>返回值:</strong><ul>
+<li><code>seconds</code> (integer): 设置后的新等待秒数</li>
+</ul>
+</li>
+</ul>
+<h4 id="minecraft-serversettings-player-idle-timeout"><a href="#minecraft-serversettings-player-idle-timeout" class="headerlink" title="minecraft:serversettings/player_idle_timeout"></a><code>minecraft:serversettings/player_idle_timeout</code></h4><p>获取空闲玩家被自动踢出前的秒数。</p>
+<ul>
+<li><strong>参数:</strong> 无</li>
+<li><strong>返回值:</strong><ul>
+<li><code>seconds</code> (integer): 空闲超时秒数</li>
+</ul>
+</li>
+</ul>
+<h4 id="minecraft-serversettings-player-idle-timeout-set"><a href="#minecraft-serversettings-player-idle-timeout-set" class="headerlink" title="minecraft:serversettings/player_idle_timeout/set"></a><code>minecraft:serversettings/player_idle_timeout/set</code></h4><p>设置空闲玩家被自动踢出前的秒数。</p>
+<ul>
+<li><strong>参数:</strong><ul>
+<li><code>seconds</code> (integer, required): 新的空闲超时秒数</li>
+</ul>
+</li>
+<li><strong>返回值:</strong><ul>
+<li><code>seconds</code> (integer): 设置后的新空闲超时秒数</li>
+</ul>
+</li>
+</ul>
+<h4 id="minecraft-serversettings-allow-flight"><a href="#minecraft-serversettings-allow-flight" class="headerlink" title="minecraft:serversettings/allow_flight"></a><code>minecraft:serversettings/allow_flight</code></h4><p>获取是否允许生存模式玩家飞行。</p>
+<ul>
+<li><strong>参数:</strong> 无</li>
+<li><strong>返回值:</strong><ul>
+<li><code>allowed</code> (boolean): 是否允许飞行</li>
+</ul>
+</li>
+</ul>
+<h4 id="minecraft-serversettings-allow-flight-set"><a href="#minecraft-serversettings-allow-flight-set" class="headerlink" title="minecraft:serversettings/allow_flight/set"></a><code>minecraft:serversettings/allow_flight/set</code></h4><p>允许或禁止生存模式玩家飞行。</p>
+<ul>
+<li><strong>参数:</strong><ul>
+<li><code>allow</code> (boolean, required): 是否允许飞行</li>
+</ul>
+</li>
+<li><strong>返回值:</strong><ul>
+<li><code>allowed</code> (boolean): 设置后的新状态</li>
+</ul>
+</li>
+</ul>
+<h4 id="minecraft-serversettings-motd"><a href="#minecraft-serversettings-motd" class="headerlink" title="minecraft:serversettings/motd"></a><code>minecraft:serversettings/motd</code></h4><p>获取服务器的 MOTD（欢迎信息）。</p>
+<ul>
+<li><strong>参数:</strong> 无</li>
+<li><strong>返回值:</strong><ul>
+<li><code>message</code> (string): MOTD 内容</li>
+</ul>
+</li>
+</ul>
+<h4 id="minecraft-serversettings-motd-set"><a href="#minecraft-serversettings-motd-set" class="headerlink" title="minecraft:serversettings/motd/set"></a><code>minecraft:serversettings/motd/set</code></h4><p>设置服务器的 MOTD（欢迎信息）。</p>
+<ul>
+<li><strong>参数:</strong><ul>
+<li><code>message</code> (string, required): 新的 MOTD 内容</li>
+</ul>
+</li>
+<li><strong>返回值:</strong><ul>
+<li><code>message</code> (string): 设置后的新 MOTD</li>
+</ul>
+</li>
+</ul>
+<h4 id="minecraft-serversettings-spawn-protection-radius"><a href="#minecraft-serversettings-spawn-protection-radius" class="headerlink" title="minecraft:serversettings/spawn_protection_radius"></a><code>minecraft:serversettings/spawn_protection_radius</code></h4><p>获取出生点保护半径（以方块为单位）。</p>
+<ul>
+<li><strong>参数:</strong> 无</li>
+<li><strong>返回值:</strong><ul>
+<li><code>radius</code> (integer): 保护半径</li>
+</ul>
+</li>
+</ul>
+<h4 id="minecraft-serversettings-spawn-protection-radius-set"><a href="#minecraft-serversettings-spawn-protection-radius-set" class="headerlink" title="minecraft:serversettings/spawn_protection_radius/set"></a><code>minecraft:serversettings/spawn_protection_radius/set</code></h4><p>设置出生点保护半径。</p>
+<ul>
+<li><strong>参数:</strong><ul>
+<li><code>radius</code> (integer, required): 新的保护半径</li>
+</ul>
+</li>
+<li><strong>返回值:</strong><ul>
+<li><code>radius</code> (integer): 设置后的新半径</li>
+</ul>
+</li>
+</ul>
+<h4 id="minecraft-serversettings-force-game-mode"><a href="#minecraft-serversettings-force-game-mode" class="headerlink" title="minecraft:serversettings/force_game_mode"></a><code>minecraft:serversettings/force_game_mode</code></h4><p>获取是否强制玩家使用服务器默认游戏模式。</p>
+<ul>
+<li><strong>参数:</strong> 无</li>
+<li><strong>返回值:</strong><ul>
+<li><code>forced</code> (boolean): 是否强制</li>
+</ul>
+</li>
+</ul>
+<h4 id="minecraft-serversettings-force-game-mode-set"><a href="#minecraft-serversettings-force-game-mode-set" class="headerlink" title="minecraft:serversettings/force_game_mode/set"></a><code>minecraft:serversettings/force_game_mode/set</code></h4><p>启用或禁用强制使用服务器默认游戏模式。</p>
+<ul>
+<li><strong>参数:</strong><ul>
+<li><code>force</code> (boolean, required): 是否强制</li>
+</ul>
+</li>
+<li><strong>返回值:</strong><ul>
+<li><code>forced</code> (boolean): 设置后的新状态</li>
+</ul>
+</li>
+</ul>
+<h4 id="minecraft-serversettings-game-mode"><a href="#minecraft-serversettings-game-mode" class="headerlink" title="minecraft:serversettings/game_mode"></a><code>minecraft:serversettings/game_mode</code></h4><p>获取服务器默认游戏模式。</p>
+<ul>
+<li><strong>参数:</strong> 无</li>
+<li><strong>返回值:</strong><ul>
+<li><code>mode</code> (string): 游戏模式 (“survival”, “creative”, “adventure”, “spectator”)</li>
+</ul>
+</li>
+</ul>
+<h4 id="minecraft-serversettings-game-mode-set"><a href="#minecraft-serversettings-game-mode-set" class="headerlink" title="minecraft:serversettings/game_mode/set"></a><code>minecraft:serversettings/game_mode/set</code></h4><p>设置服务器默认游戏模式。</p>
+<ul>
+<li><strong>参数:</strong><ul>
+<li><code>mode</code> (string, required): 新的游戏模式</li>
+</ul>
+</li>
+<li><strong>返回值:</strong><ul>
+<li><code>mode</code> (string): 设置后的新游戏模式</li>
+</ul>
+</li>
+</ul>
+<h4 id="minecraft-serversettings-view-distance"><a href="#minecraft-serversettings-view-distance" class="headerlink" title="minecraft:serversettings/view_distance"></a><code>minecraft:serversettings/view_distance</code></h4><p>获取服务器视距（以区块为单位）。</p>
+<ul>
+<li><strong>参数:</strong> 无</li>
+<li><strong>返回值:</strong><ul>
+<li><code>distance</code> (integer): 视距</li>
+</ul>
+</li>
+</ul>
+<h4 id="minecraft-serversettings-view-distance-set"><a href="#minecraft-serversettings-view-distance-set" class="headerlink" title="minecraft:serversettings/view_distance/set"></a><code>minecraft:serversettings/view_distance/set</code></h4><p>设置服务器视距。</p>
+<ul>
+<li><strong>参数:</strong><ul>
+<li><code>distance</code> (integer, required): 新的视距</li>
+</ul>
+</li>
+<li><strong>返回值:</strong><ul>
+<li><code>distance</code> (integer): 设置后的新视距</li>
+</ul>
+</li>
+</ul>
+<h4 id="minecraft-serversettings-simulation-distance"><a href="#minecraft-serversettings-simulation-distance" class="headerlink" title="minecraft:serversettings/simulation_distance"></a><code>minecraft:serversettings/simulation_distance</code></h4><p>获取服务器模拟距离（以区块为单位）。</p>
+<ul>
+<li><strong>参数:</strong> 无</li>
+<li><strong>返回值:</strong><ul>
+<li><code>distance</code> (integer): 模拟距离</li>
+</ul>
+</li>
+</ul>
+<h4 id="minecraft-serversettings-simulation-distance-set"><a href="#minecraft-serversettings-simulation-distance-set" class="headerlink" title="minecraft:serversettings/simulation_distance/set"></a><code>minecraft:serversettings/simulation_distance/set</code></h4><p>设置服务器模拟距离。</p>
+<ul>
+<li><strong>参数:</strong><ul>
+<li><code>distance</code> (integer, required): 新的模拟距离</li>
+</ul>
+</li>
+<li><strong>返回值:</strong><ul>
+<li><code>distance</code> (integer): 设置后的新模拟距离</li>
+</ul>
+</li>
+</ul>
+<h4 id="minecraft-serversettings-accept-transfers"><a href="#minecraft-serversettings-accept-transfers" class="headerlink" title="minecraft:serversettings/accept_transfers"></a><code>minecraft:serversettings/accept_transfers</code></h4><p>获取服务器是否接受来自其他服务器的玩家转移。</p>
+<ul>
+<li><strong>参数:</strong> 无</li>
+<li><strong>返回值:</strong><ul>
+<li><code>accepted</code> (boolean): 是否接受转移</li>
+</ul>
+</li>
+</ul>
+<h4 id="minecraft-serversettings-accept-transfers-set"><a href="#minecraft-serversettings-accept-transfers-set" class="headerlink" title="minecraft:serversettings/accept_transfers/set"></a><code>minecraft:serversettings/accept_transfers/set</code></h4><p>启用或禁用接受来自其他服务器的玩家转移。</p>
+<ul>
+<li><strong>参数:</strong><ul>
+<li><code>accept</code> (boolean, required): 是否接受转移</li>
+</ul>
+</li>
+<li><strong>返回值:</strong><ul>
+<li><code>accepted</code> (boolean): 设置后的新状态</li>
+</ul>
+</li>
+</ul>
+<h4 id="minecraft-serversettings-status-heartbeat-interval"><a href="#minecraft-serversettings-status-heartbeat-interval" class="headerlink" title="minecraft:serversettings/status_heartbeat_interval"></a><code>minecraft:serversettings/status_heartbeat_interval</code></h4><p>获取服务器状态心跳包的发送间隔（秒）。</p>
+<ul>
+<li><strong>参数:</strong> 无</li>
+<li><strong>返回值:</strong><ul>
+<li><code>seconds</code> (integer): 心跳间隔</li>
+</ul>
+</li>
+</ul>
+<h4 id="minecraft-serversettings-status-heartbeat-interval-set"><a href="#minecraft-serversettings-status-heartbeat-interval-set" class="headerlink" title="minecraft:serversettings/status_heartbeat_interval/set"></a><code>minecraft:serversettings/status_heartbeat_interval/set</code></h4><p>设置服务器状态心跳包的发送间隔。</p>
+<ul>
+<li><strong>参数:</strong><ul>
+<li><code>seconds</code> (integer, required): 新的心跳间隔</li>
+</ul>
+</li>
+<li><strong>返回值:</strong><ul>
+<li><code>seconds</code> (integer): 设置后的新间隔</li>
+</ul>
+</li>
+</ul>
+<h4 id="minecraft-serversettings-operator-user-permission-level"><a href="#minecraft-serversettings-operator-user-permission-level" class="headerlink" title="minecraft:serversettings/operator_user_permission_level"></a><code>minecraft:serversettings/operator_user_permission_level</code></h4><p>获取执行操作员命令所需的权限等级。</p>
+<ul>
+<li><strong>参数:</strong> 无</li>
+<li><strong>返回值:</strong><ul>
+<li><code>level</code> (integer): 权限等级 (1-4)</li>
+</ul>
+</li>
+</ul>
+<h4 id="minecraft-serversettings-operator-user-permission-level-set"><a href="#minecraft-serversettings-operator-user-permission-level-set" class="headerlink" title="minecraft:serversettings/operator_user_permission_level/set"></a><code>minecraft:serversettings/operator_user_permission_level/set</code></h4><p>设置执行操作员命令所需的权限等级。</p>
+<ul>
+<li><strong>参数:</strong><ul>
+<li><code>level</code> (integer, required): 新的权限等级</li>
+</ul>
+</li>
+<li><strong>返回值:</strong><ul>
+<li><code>level</code> (integer): 设置后的新等级</li>
+</ul>
+</li>
+</ul>
+<h4 id="minecraft-serversettings-hide-online-players"><a href="#minecraft-serversettings-hide-online-players" class="headerlink" title="minecraft:serversettings/hide_online_players"></a><code>minecraft:serversettings/hide_online_players</code></h4><p>获取是否在状态查询中隐藏在线玩家信息。</p>
+<ul>
+<li><strong>参数:</strong> 无</li>
+<li><strong>返回值:</strong><ul>
+<li><code>hidden</code> (boolean): 是否隐藏</li>
+</ul>
+</li>
+</ul>
+<h4 id="minecraft-serversettings-hide-online-players-set"><a href="#minecraft-serversettings-hide-online-players-set" class="headerlink" title="minecraft:serversettings/hide_online_players/set"></a><code>minecraft:serversettings/hide_online_players/set</code></h4><p>启用或禁用在状态查询中隐藏在线玩家信息。</p>
+<ul>
+<li><strong>参数:</strong><ul>
+<li><code>hide</code> (boolean, required): 是否隐藏</li>
+</ul>
+</li>
+<li><strong>返回值:</strong><ul>
+<li><code>hidden</code> (boolean): 设置后的新状态</li>
+</ul>
+</li>
+</ul>
+<h4 id="minecraft-serversettings-status-replies"><a href="#minecraft-serversettings-status-replies" class="headerlink" title="minecraft:serversettings/status_replies"></a><code>minecraft:serversettings/status_replies</code></h4><p>获取服务器是否响应连接状态请求。</p>
+<ul>
+<li><strong>参数:</strong> 无</li>
+<li><strong>返回值:</strong><ul>
+<li><code>enabled</code> (boolean): 是否响应</li>
+</ul>
+</li>
+</ul>
+<h4 id="minecraft-serversettings-status-replies-set"><a href="#minecraft-serversettings-status-replies-set" class="headerlink" title="minecraft:serversettings/status_replies/set"></a><code>minecraft:serversettings/status_replies/set</code></h4><p>启用或禁用服务器响应连接状态请求。</p>
+<ul>
+<li><strong>参数:</strong><ul>
+<li><code>enable</code> (boolean, required): 是否响应</li>
+</ul>
+</li>
+<li><strong>返回值:</strong><ul>
+<li><code>enabled</code> (boolean): 设置后的新状态</li>
+</ul>
+</li>
+</ul>
+<h4 id="minecraft-serversettings-entity-broadcast-range"><a href="#minecraft-serversettings-entity-broadcast-range" class="headerlink" title="minecraft:serversettings/entity_broadcast_range"></a><code>minecraft:serversettings/entity_broadcast_range</code></h4><p>获取实体广播范围（百分比）。</p>
+<ul>
+<li><strong>参数:</strong> 无</li>
+<li><strong>返回值:</strong><ul>
+<li><code>percentage_points</code> (integer): 广播范围百分比</li>
+</ul>
+</li>
+</ul>
+<h4 id="minecraft-serversettings-entity-broadcast-range-set"><a href="#minecraft-serversettings-entity-broadcast-range-set" class="headerlink" title="minecraft:serversettings/entity_broadcast_range/set"></a><code>minecraft:serversettings/entity_broadcast_range/set</code></h4><p>设置实体广播范围（百分比）。</p>
+<ul>
+<li><strong>参数:</strong><ul>
+<li><code>percentage_points</code> (integer, required): 新的广播范围百分比</li>
+</ul>
+</li>
+<li><strong>返回值:</strong><ul>
+<li><code>percentage_points</code> (integer): 设置后的新百分比</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="游戏规则"><a href="#游戏规则" class="headerlink" title="游戏规则"></a>游戏规则</h3><h4 id="minecraft-gamerules"><a href="#minecraft-gamerules" class="headerlink" title="minecraft:gamerules"></a><code>minecraft:gamerules</code></h4><p>获取所有可用的游戏规则及其当前值。</p>
+<ul>
+<li><strong>参数:</strong> 无</li>
+<li><strong>返回值:</strong><ul>
+<li><code>gamerules</code> (array[TypedGameRule]): 游戏规则列表<ul>
+<li><code>key</code> (string): 规则名称</li>
+<li><code>value</code> (string): 规则值</li>
+<li><code>type</code> (string): 值类型 (“boolean” 或 “integer”)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="minecraft-gamerules-update"><a href="#minecraft-gamerules-update" class="headerlink" title="minecraft:gamerules/update"></a><code>minecraft:gamerules/update</code></h4><p>更新指定游戏规则的值。</p>
+<ul>
+<li><strong>参数:</strong><ul>
+<li><code>gamerule</code> (UntypedGameRule, required): 要更新的规则<ul>
+<li><code>key</code> (string): 规则名称</li>
+<li><code>value</code> (string): 新的规则值</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>返回值:</strong><ul>
+<li><code>gamerule</code> (TypedGameRule): 更新后的游戏规则对象</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="通知-Notifications"><a href="#通知-Notifications" class="headerlink" title="通知 (Notifications)"></a>通知 (Notifications)</h3><p>这些是服务器主动向客户端推送的事件。</p>
+<ul>
+<li><code>notification:server/started</code>: 服务器已启动</li>
+<li><code>notification:server/stopping</code>: 服务器正在关闭</li>
+<li><code>notification:server/saving</code>: 服务器开始保存</li>
+<li><code>notification:server/saved</code>: 服务器保存完成</li>
+<li><code>notification:server/status</code>: 服务器状态心跳（包含 <code>status</code> 参数）</li>
+<li><code>notification:players/joined</code>: 玩家加入（包含 <code>player</code> 参数）</li>
+<li><code>notification:players/left</code>: 玩家离开（包含 <code>player</code> 参数）</li>
+<li><code>notification:operators/added</code>: 玩家被授予 OP 权限（包含 <code>player</code> 参数）</li>
+<li><code>notification:operators/removed</code>: 玩家被撤销 OP 权限（包含 <code>player</code> 参数）</li>
+<li><code>notification:allowlist/added</code>: 玩家被加入允许列表（包含 <code>player</code> 参数）</li>
+<li><code>notification:allowlist/removed</code>: 玩家被移出允许列表（包含 <code>player</code> 参数）</li>
+<li><code>notification:ip_bans/added</code>: IP 被加入封禁列表（包含 <code>player</code> 参数）</li>
+<li><code>notification:ip_bans/removed</code>: IP 被移出封禁列表（包含 <code>player</code> 参数，类型为 string）</li>
+<li><code>notification:bans/added</code>: 玩家被加入封禁列表（包含 <code>player</code> 参数）</li>
+<li><code>notification:bans/removed</code>: 玩家被移出封禁列表（包含 <code>player</code> 参数）</li>
+<li><code>notification:gamerules/updated</code>: 游戏规则被更新（包含 <code>gamerule</code> 参数）</li>
+</ul>
+<hr>
+<h2 id="组件-Components"><a href="#组件-Components" class="headerlink" title="组件 (Components)"></a>组件 (Components)</h2><h3 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h3><h4 id="Player"><a href="#Player" class="headerlink" title="Player"></a><code>Player</code></h4><p>代表一个 Minecraft 玩家。</p>
+<ul>
+<li><code>name</code> (string): 玩家名</li>
+<li><code>id</code> (string): 玩家 UUID</li>
+</ul>
+<h4 id="Operator"><a href="#Operator" class="headerlink" title="Operator"></a><code>Operator</code></h4><p>代表一个操作员玩家。</p>
+<ul>
+<li><code>player</code> (Player): 玩家信息</li>
+<li><code>permissionLevel</code> (integer): 权限等级 (1-4)</li>
+<li><code>bypassesPlayerLimit</code> (boolean): 是否绕过玩家数量上限</li>
+</ul>
+<h4 id="UserBan"><a href="#UserBan" class="headerlink" title="UserBan"></a><code>UserBan</code></h4><p>代表一个用户封禁条目。</p>
+<ul>
+<li><code>player</code> (Player): 被封禁的玩家</li>
+<li><code>reason</code> (string): 封禁原因</li>
+<li><code>expires</code> (string): 封禁过期时间</li>
+<li><code>source</code> (string): 执行封禁的来源</li>
+</ul>
+<h4 id="IpBan"><a href="#IpBan" class="headerlink" title="IpBan"></a><code>IpBan</code></h4><p>代表一个 IP 封禁条目。</p>
+<ul>
+<li><code>ip</code> (string): 被封禁的 IP 地址</li>
+<li><code>reason</code> (string): 封禁原因</li>
+<li><code>expires</code> (string): 封禁过期时间</li>
+<li><code>source</code> (string): 执行封禁的来源</li>
+</ul>
+<h4 id="IncomingIpBan"><a href="#IncomingIpBan" class="headerlink" title="IncomingIpBan"></a><code>IncomingIpBan</code></h4><p>用于添加 IP 封禁的输入对象。</p>
+<ul>
+<li><code>ip</code> (string): 要封禁的 IP</li>
+<li><code>reason</code> (string): 封禁原因</li>
+<li><code>expires</code> (string): 过期时间</li>
+<li><code>source</code> (string): 来源</li>
+<li><code>player</code> (Player): 关联的玩家（可选）</li>
+</ul>
+<h4 id="ServerState"><a href="#ServerState" class="headerlink" title="ServerState"></a><code>ServerState</code></h4><p>代表服务器状态。</p>
+<ul>
+<li><code>started</code> (boolean): 服务器是否运行</li>
+<li><code>players</code> (array[Player]): 在线玩家</li>
+<li><code>version</code> (Version): 服务器版本</li>
+</ul>
+<h4 id="Version"><a href="#Version" class="headerlink" title="Version"></a><code>Version</code></h4><p>服务器版本信息。</p>
+<ul>
+<li><code>name</code> (string): 版本名称</li>
+<li><code>protocol</code> (integer): 协议版本</li>
+</ul>
+<h4 id="Message"><a href="#Message" class="headerlink" title="Message"></a><code>Message</code></h4><p>消息内容。</p>
+<ul>
+<li><code>literal</code> (string): 文本消息</li>
+<li><code>translatable</code> (string): 可翻译的消息键</li>
+<li><code>translatableParams</code> (array[string]): 可翻译消息的参数</li>
+</ul>
+<h4 id="SystemMessage"><a href="#SystemMessage" class="headerlink" title="SystemMessage"></a><code>SystemMessage</code></h4><p>系统消息对象。</p>
+<ul>
+<li><code>message</code> (Message): 消息内容</li>
+<li><code>overlay</code> (boolean): 是否为屏幕中央的覆盖消息</li>
+<li><code>receivingPlayers</code> (array[Player]): 接收者列表</li>
+</ul>
+<h4 id="KickPlayer"><a href="#KickPlayer" class="headerlink" title="KickPlayer"></a><code>KickPlayer</code></h4><p>踢出玩家的输入对象。</p>
+<ul>
+<li><code>players</code> (array[Player]): 被踢玩家</li>
+<li><code>message</code> (Message): 踢出原因</li>
+</ul>
+<h4 id="UntypedGameRule"><a href="#UntypedGameRule" class="headerlink" title="UntypedGameRule"></a><code>UntypedGameRule</code></h4><p>用于更新游戏规则的输入对象。</p>
+<ul>
+<li><code>key</code> (string): 规则名</li>
+<li><code>value</code> (string): 规则值</li>
+</ul>
+<h4 id="TypedGameRule"><a href="#TypedGameRule" class="headerlink" title="TypedGameRule"></a><code>TypedGameRule</code></h4><p>包含类型信息的游戏规则对象。</p>
+<ul>
+<li><code>key</code> (string): 规则名</li>
+<li><code>value</code> (string): 规则值</li>
+<li><code>type</code> (string): 值类型 (“boolean”, “integer”)</li>
+</ul>
+
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+        <div id="lv-container"></div>
+        <div class="giscus"></div>
+    </div>
+</div>
+    </div>
+</div>
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+        <li>
+            <a target="_blank"  href="https://github.com/Guailoudou">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+            <li>
+                <a target="_blank"  href="https://afdian.com/a/Guailoudou">
+                                <span class="fa-stack fa-lg">
+                                    <i class="iconfont icon-afdian"></i>
+                                </span>
+                </a>
+            </li>
+        
+
+        
+            <li>
+                <a target="_blank"  href="https://space.bilibili.com/496960407">
+                                <span class="fa-stack fa-lg">
+                                    <i class="iconfont icon-bilibili-line"></i>
+                                </span>
+                </a>
+            </li>
+        
+
+        
+            <li>
+                <a target="_blank"  href="https://qm.qq.com/q/tVdS3KHYxG">
+                                <span class="fa-stack fa-lg">
+                                    <i class="iconfont icon-QQ"></i>
+                                </span>
+                </a>
+            </li>
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span>/</span>
+        
+        <span><a target="_blank" rel="noopener" href="https://www.gldhn.top">web</a></span>
+        <span>/</span>
+        
+        <span><a target="_blank" rel="noopener" href="https://alist.gldhn.top">ALIST</a></span>
+        <span>/</span>
+        
+        <span><a target="_blank" rel="noopener" href="https://file.gldhn.top">File</a></span>
+        <span>/</span>
+        
+        <span><a target="_blank" rel="noopener" href="https://www.apihz.cn/">接口盒子</a></span>
+        <span>/</span>
+        
+        <span><a target="_blank" rel="noopener" href="https://icp.gov.moe/?keyword=20241241">萌ICP备20241241号</a></span>
+        <span>/</span>
+        
+    </p>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>  Theme <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = ""
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="/jquery.min.3.3.1.js"></script>
+
+<script src="/js/index.js"></script>
+
+<script defer src="https://events.vercount.one/js"></script>
+
+
+
+
+    <script src="https://giscus.app/client.js"
+    data-repo="Guailoudou/pages"
+    data-repo-id="R_kgDOLZFPxQ"
+    data-category="Announcements"
+    data-category-id="DIC_kwDOLZFPxc4CdlRm"
+    data-mapping="pathname"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="bottom"
+    data-theme="preferred_color_scheme"
+    data-lang="zh-CN"
+    crossorigin="anonymous"
+    async>
+</script>
+
+
+
+
+</html>
