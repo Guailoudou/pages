@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang=zh-CN>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:description" content="乖漏斗个人博客，分享教程以及一些我制作的软件等，欢迎访问">
+    <meta property="og:type" content="website">
+    <meta name="description" content="乖漏斗个人博客，分享教程以及一些我制作的软件等，欢迎访问">
+    <meta name="keywords"  content="">
+    <link rel="shortcut icon" href="https://q1.qlogo.cn/g?b=qq&nk=1241593334&s=100">
+    <!-- <link rel="shortcut icon" href="/img/favicon.ico"> -->
+
+    <title>
+        
+        js笔记 - Guailoudou 博客
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/aircloud.css">
+
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_28hi1hpxx24.css" rel="stylesheet" type="text/css">
+    <link href="//at.alicdn.com/t/c/font_4657326_ux10jqqsarj.css"  rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+
+    
+
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 7.1.1"></head>
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> Guailoudou blog </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar radius">
+            <img src="https://q1.qlogo.cn/g?b=qq&nk=1241593334&s=640" />
+        </div>
+        <div class="name">
+            <i>Guailoudou</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/collect/">
+                    <i class="iconfont icon-shoucang1"></i>
+                    <span>收藏</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#js%E4%BA%8B%E4%BB%B6"><span class="toc-text">js事件</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-bg" id="search-bg"></div>
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i> Guailoudou blog </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        <div class="post-container">
+    <div class="post-title">
+        js笔记
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2024-03-01 23:15:21</span></span>
+        
+        <span class="attr">标签：/
+        
+        <a class="tag" href="/tags/#日志" title="日志">日志</a>
+        <span>/</span>
+        
+        <a class="tag" href="/tags/#学习" title="学习">学习</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content no-indent">
+        <ul>
+<li>网页在全屏之间切换<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">toggleFullScreen</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="variable language_">document</span>.<span class="property">fullscreenElement</span>) &#123;</span><br><span class="line">        <span class="variable language_">document</span>.<span class="title function_">exitFullscreen</span>();</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="variable language_">document</span>.<span class="property">documentElement</span>.<span class="title function_">requestFullscreen</span>();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="js事件"><a href="#js事件" class="headerlink" title="js事件"></a>js事件</h3><p><code>addEventListener(&#39;事件&#39;,函数)</code>为添加页面事件监听</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">window</span>.<span class="property">onload</span> = <span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="comment">//页面加载完毕后执行</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">window</span>.<span class="title function_">addEventListener</span>(<span class="string">&#x27;resize&#x27;</span>, <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;窗口大小已改变&#x27;</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> width = <span class="variable language_">window</span>.<span class="property">innerWidth</span>;</span><br><span class="line"><span class="keyword">const</span> height = <span class="variable language_">window</span>.<span class="property">innerHeight</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`页面宽度: <span class="subst">$&#123;width&#125;</span>px`</span>);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`页面高度: <span class="subst">$&#123;height&#125;</span>px`</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> totalWidth = <span class="variable language_">document</span>.<span class="property">documentElement</span>.<span class="property">clientWidth</span>;</span><br><span class="line"><span class="keyword">const</span> totalHeight = <span class="variable language_">document</span>.<span class="property">documentElement</span>.<span class="property">clientHeight</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`文档总宽度: <span class="subst">$&#123;totalWidth&#125;</span>px`</span>);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`文档总高度: <span class="subst">$&#123;totalHeight&#125;</span>px`</span>);</span><br></pre></td></tr></table></figure>
+
+
+<ul>
+<li><p>click：当用户点击某个元素时触发。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">element.<span class="title function_">addEventListener</span>(<span class="string">&#x27;click&#x27;</span>, <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="comment">// 事件处理代码</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></li>
+<li><p>dblclick：当用户双击某个元素时触发。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">element.<span class="title function_">addEventListener</span>(<span class="string">&#x27;dblclick&#x27;</span>, <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="comment">// 事件处理代码</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></li>
+<li><p>mouseover：当鼠标指针移动到某个元素上方时触发。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">element.<span class="title function_">addEventListener</span>(<span class="string">&#x27;mouseover&#x27;</span>, <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="comment">// 事件处理代码</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></li>
+<li><p>mouseout：当鼠标指针离开某个元素时触发。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">element.<span class="title function_">addEventListener</span>(<span class="string">&#x27;mouseout&#x27;</span>, <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="comment">// 事件处理代码</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></li>
+<li><p>mousemove：当鼠标指针在元素上移动时触发。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">element.<span class="title function_">addEventListener</span>(<span class="string">&#x27;mousemove&#x27;</span>, <span class="keyword">function</span>(<span class="params">event</span>) &#123;</span><br><span class="line">  <span class="comment">// event.clientX 和 event.clientY 可以获取鼠标的位置</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></li>
+<li><p>mousedown：当鼠标按钮被按下时触发。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">element.<span class="title function_">addEventListener</span>(<span class="string">&#x27;mousedown&#x27;</span>, <span class="keyword">function</span>(<span class="params">event</span>) &#123;</span><br><span class="line">  <span class="comment">// event.button 可以获取被按下的鼠标按钮</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></li>
+<li><p>mouseup：当鼠标按钮被释放时触发。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">element.<span class="title function_">addEventListener</span>(<span class="string">&#x27;mouseup&#x27;</span>, <span class="keyword">function</span>(<span class="params">event</span>) &#123;</span><br><span class="line">  <span class="comment">// event.button 可以获取被释放的鼠标按钮</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></li>
+<li><p>keypress：当键盘上的键被按下并释放时触发。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">element.<span class="title function_">addEventListener</span>(<span class="string">&#x27;keypress&#x27;</span>, <span class="keyword">function</span>(<span class="params">event</span>) &#123;</span><br><span class="line">  <span class="comment">// event.key 可以获取被按下的键</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></li>
+<li><p>keydown：当键盘上的键被按下时触发。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">element.<span class="title function_">addEventListener</span>(<span class="string">&#x27;keydown&#x27;</span>, <span class="keyword">function</span>(<span class="params">event</span>) &#123;</span><br><span class="line">  <span class="comment">// event.key 可以获取被按下的键</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></li>
+<li><p>keyup：当键盘上的键被释放时触发。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">element.<span class="title function_">addEventListener</span>(<span class="string">&#x27;keyup&#x27;</span>, <span class="keyword">function</span>(<span class="params">event</span>) &#123;</span><br><span class="line">  <span class="comment">// event.key 可以获取被释放的键</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></li>
+<li><p>change：当元素的值发生变化时触发，如 <code>&lt;input&gt;</code>, <code>&lt;textarea&gt;</code>, 和 <code>&lt;select&gt;</code> 元素。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">element.<span class="title function_">addEventListener</span>(<span class="string">&#x27;change&#x27;</span>, <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="comment">// 事件处理代码</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></li>
+<li><p>focus：当元素获得焦点时触发，如用户点击输入框或使用Tab键导航到元素。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">element.<span class="title function_">addEventListener</span>(<span class="string">&#x27;focus&#x27;</span>, <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="comment">// 事件处理代码</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></li>
+<li><p>blur：当元素失去焦点时触发。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">element.<span class="title function_">addEventListener</span>(<span class="string">&#x27;blur&#x27;</span>, <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="comment">// 事件处理代码</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>submit：当表单提交时触发。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">formElement.<span class="title function_">addEventListener</span>(<span class="string">&#x27;submit&#x27;</span>, <span class="keyword">function</span>(<span class="params">event</span>) &#123;</span><br><span class="line">  event.<span class="title function_">preventDefault</span>(); <span class="comment">// 阻止表单的默认提交行为</span></span><br><span class="line">  <span class="comment">// 事件处理代码</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></li>
+</ul>
+
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+        <div id="lv-container"></div>
+        <div class="giscus"></div>
+    </div>
+</div>
+    </div>
+</div>
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+        <li>
+            <a target="_blank"  href="https://github.com/Guailoudou">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+            <li>
+                <a target="_blank"  href="https://afdian.com/a/Guailoudou">
+                                <span class="fa-stack fa-lg">
+                                    <i class="iconfont icon-afdian"></i>
+                                </span>
+                </a>
+            </li>
+        
+
+        
+            <li>
+                <a target="_blank"  href="https://space.bilibili.com/496960407">
+                                <span class="fa-stack fa-lg">
+                                    <i class="iconfont icon-bilibili-line"></i>
+                                </span>
+                </a>
+            </li>
+        
+
+        
+            <li>
+                <a target="_blank"  href="https://qm.qq.com/q/tVdS3KHYxG">
+                                <span class="fa-stack fa-lg">
+                                    <i class="iconfont icon-QQ"></i>
+                                </span>
+                </a>
+            </li>
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span>/</span>
+        
+        <span><a target="_blank" rel="noopener" href="https://www.gldhn.top">web</a></span>
+        <span>/</span>
+        
+        <span><a target="_blank" rel="noopener" href="https://alist.gldhn.top">ALIST</a></span>
+        <span>/</span>
+        
+        <span><a target="_blank" rel="noopener" href="https://file.gldhn.top">File</a></span>
+        <span>/</span>
+        
+        <span><a target="_blank" rel="noopener" href="https://www.apihz.cn/">接口盒子</a></span>
+        <span>/</span>
+        
+        <span><a target="_blank" rel="noopener" href="https://icp.gov.moe/?keyword=20241241">萌ICP备20241241号</a></span>
+        <span>/</span>
+        
+    </p>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>  Theme <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = ""
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="/jquery.min.3.3.1.js"></script>
+
+<script src="/js/index.js"></script>
+
+<script defer src="https://events.vercount.one/js"></script>
+
+
+
+
+    <script src="https://giscus.app/client.js"
+    data-repo="Guailoudou/pages"
+    data-repo-id="R_kgDOLZFPxQ"
+    data-category="Announcements"
+    data-category-id="DIC_kwDOLZFPxc4CdlRm"
+    data-mapping="pathname"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="bottom"
+    data-theme="preferred_color_scheme"
+    data-lang="zh-CN"
+    crossorigin="anonymous"
+    async>
+</script>
+
+
+
+
+</html>

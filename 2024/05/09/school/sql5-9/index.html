@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang=zh-CN>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:description" content="乖漏斗个人博客，分享教程以及一些我制作的软件等，欢迎访问">
+    <meta property="og:type" content="website">
+    <meta name="description" content="乖漏斗个人博客，分享教程以及一些我制作的软件等，欢迎访问">
+    <meta name="keywords"  content="">
+    <link rel="shortcut icon" href="https://q1.qlogo.cn/g?b=qq&nk=1241593334&s=100">
+    <!-- <link rel="shortcut icon" href="/img/favicon.ico"> -->
+
+    <title>
+        
+        数据库5-9课堂练习 - Guailoudou 博客
+        
+    </title><meta name="robots" content="noindex">
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/aircloud.css">
+
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_28hi1hpxx24.css" rel="stylesheet" type="text/css">
+    <link href="//at.alicdn.com/t/c/font_4657326_ux10jqqsarj.css"  rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+
+    
+
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 7.1.1"></head>
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> Guailoudou blog </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar radius">
+            <img src="https://q1.qlogo.cn/g?b=qq&nk=1241593334&s=640" />
+        </div>
+        <div class="name">
+            <i>Guailoudou</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/collect/">
+                    <i class="iconfont icon-shoucang1"></i>
+                    <span>收藏</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-bg" id="search-bg"></div>
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i> Guailoudou blog </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        <div class="post-container">
+    <div class="post-title">
+        数据库5-9课堂练习
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2024-05-09 14:39:29</span></span>
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content no-indent">
+        <ul>
+<li><a href="%E5%AE%9E%E9%AA%8C-%E5%A4%9A%E8%A1%A8%E8%BF%9E%E6%8E%A5.docx">实验-多表连接.docx</a></li>
+<li><a href="orderdb.sql">orderdb.sql</a></li>
+</ul>
+<p>连接所有表</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">FROM</span> ordermaster om </span><br><span class="line"><span class="keyword">JOIN</span> customer c <span class="keyword">ON</span> c.customerNo<span class="operator">=</span>om.customerNo </span><br><span class="line"><span class="keyword">JOIN</span> orderdetail od <span class="keyword">ON</span> od.orderNo<span class="operator">=</span>om.orderNo </span><br><span class="line"><span class="keyword">JOIN</span> product p <span class="keyword">ON</span> p.productNo<span class="operator">=</span>od.productNo</span><br><span class="line"><span class="keyword">JOIN</span> employee e <span class="keyword">ON</span> e.employeeNo<span class="operator">=</span>om.salerNo</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> e.employeeNo,e.employeeName,e.address,om.orderNo,om.customerNo,om.orderDate </span><br><span class="line"><span class="keyword">FROM</span> employee e <span class="keyword">JOIN</span> ordermaster om <span class="keyword">ON</span> e.employeeNo<span class="operator">=</span>om.salerNo</span><br><span class="line"><span class="keyword">WHERE</span> e.address <span class="keyword">LIKE</span> <span class="string">&#x27;上海市%&#x27;</span></span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> om.customerNo <span class="keyword">DESC</span></span><br></pre></td></tr></table></figure></li>
+<li><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> om.customerNO,c.customerName,om.orderNo,od.quantity,om.orderSum</span><br><span class="line"><span class="keyword">FROM</span> ordermaster om </span><br><span class="line"><span class="keyword">JOIN</span> customer c <span class="keyword">ON</span> c.customerNo<span class="operator">=</span>om.customerNo </span><br><span class="line"><span class="keyword">JOIN</span> orderdetail od <span class="keyword">ON</span> od.orderNo<span class="operator">=</span>om.orderNo </span><br><span class="line"><span class="keyword">JOIN</span> product p <span class="keyword">ON</span> p.productNo<span class="operator">=</span>od.productNo</span><br><span class="line"><span class="keyword">WHERE</span> p.productName<span class="operator">=</span><span class="string">&#x27;32M DRAM&#x27;</span>;</span><br></pre></td></tr></table></figure></li>
+<li><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> e.employeeName,e.department,e.sex,e.birthday</span><br><span class="line"><span class="keyword">FROM</span> employee e</span><br><span class="line"><span class="keyword">WHERE</span> e.department <span class="keyword">IN</span> (</span><br><span class="line">	<span class="keyword">SELECT</span> department <span class="keyword">FROM</span> employee <span class="keyword">WHERE</span> employeeName<span class="operator">=</span><span class="string">&#x27;张小梅&#x27;</span></span><br><span class="line">)</span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> department <span class="keyword">DESC</span>;</span><br></pre></td></tr></table></figure></li>
+<li><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> e.employeeNo,e.employeeName,e.department,om.orderNo,c.customerName,om.orderDate</span><br><span class="line"><span class="keyword">FROM</span> ordermaster om </span><br><span class="line"><span class="keyword">JOIN</span> customer c <span class="keyword">ON</span> c.customerNo<span class="operator">=</span>om.customerNo </span><br><span class="line"><span class="keyword">JOIN</span> employee e <span class="keyword">ON</span> e.employeeNo<span class="operator">=</span>om.salerNo</span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> e.employeeNo <span class="keyword">DESC</span>;</span><br></pre></td></tr></table></figure></li>
+<li><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> od.productNo,p.productName,od.quantity,od.price</span><br><span class="line"><span class="keyword">FROM</span> orderdetail od</span><br><span class="line"><span class="keyword">JOIN</span> product p <span class="keyword">ON</span> p.productNo<span class="operator">=</span>od.productNo</span><br><span class="line"><span class="keyword">WHERE</span> od.quantity<span class="operator">&gt;</span><span class="number">4</span>;</span><br></pre></td></tr></table></figure></li>
+<li><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> om.customerNo,c.customerName,od.productNo,p.productName,od.quantity,od.price,om.orderSum</span><br><span class="line"><span class="keyword">FROM</span> ordermaster om </span><br><span class="line"><span class="keyword">JOIN</span> customer c <span class="keyword">ON</span> c.customerNo<span class="operator">=</span>om.customerNo </span><br><span class="line"><span class="keyword">JOIN</span> orderdetail od <span class="keyword">ON</span> od.orderNo<span class="operator">=</span>om.orderNo </span><br><span class="line"><span class="keyword">JOIN</span> product p <span class="keyword">ON</span> p.productNo<span class="operator">=</span>od.productNo</span><br></pre></td></tr></table></figure></li>
+<li><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> e.employeeName,e.department <span class="keyword">FROM</span> employee e</span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> e.department</span><br></pre></td></tr></table></figure></li>
+<li><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> e.employeeName,e.sex,om.orderDate,od.quantity,om.orderSum</span><br><span class="line"><span class="keyword">FROM</span> ordermaster om </span><br><span class="line"><span class="keyword">JOIN</span> orderdetail od <span class="keyword">ON</span> od.orderNo<span class="operator">=</span>om.orderNo </span><br><span class="line"><span class="keyword">JOIN</span> employee e <span class="keyword">ON</span> e.employeeNo<span class="operator">=</span>om.salerNo</span><br><span class="line"><span class="keyword">JOIN</span> product p <span class="keyword">ON</span> p.productNo<span class="operator">=</span>od.productNo</span><br><span class="line"><span class="keyword">WHERE</span> p.productName<span class="operator">=</span><span class="string">&#x27;52倍速光驱&#x27;</span>;</span><br></pre></td></tr></table></figure></li>
+<li><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="comment">--我不知道你要啥啊</span></span><br><span class="line"><span class="keyword">FROM</span> ordermaster om </span><br><span class="line"><span class="keyword">JOIN</span> orderdetail od <span class="keyword">ON</span> od.orderNo<span class="operator">=</span>om.orderNo </span><br><span class="line"><span class="keyword">JOIN</span> employee e <span class="keyword">ON</span> e.employeeNo<span class="operator">=</span>om.salerNo</span><br><span class="line"><span class="keyword">WHERE</span> e.employeeName<span class="operator">=</span><span class="string">&#x27;张小娟&#x27;</span>;</span><br></pre></td></tr></table></figure>
+…没写完…….</li>
+</ol>
+<!-- flag of hidden posts -->
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+        <div id="lv-container"></div>
+        <div class="giscus"></div>
+    </div>
+</div>
+    </div>
+</div>
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+        <li>
+            <a target="_blank"  href="https://github.com/Guailoudou">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+            <li>
+                <a target="_blank"  href="https://afdian.com/a/Guailoudou">
+                                <span class="fa-stack fa-lg">
+                                    <i class="iconfont icon-afdian"></i>
+                                </span>
+                </a>
+            </li>
+        
+
+        
+            <li>
+                <a target="_blank"  href="https://space.bilibili.com/496960407">
+                                <span class="fa-stack fa-lg">
+                                    <i class="iconfont icon-bilibili-line"></i>
+                                </span>
+                </a>
+            </li>
+        
+
+        
+            <li>
+                <a target="_blank"  href="https://qm.qq.com/q/tVdS3KHYxG">
+                                <span class="fa-stack fa-lg">
+                                    <i class="iconfont icon-QQ"></i>
+                                </span>
+                </a>
+            </li>
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span>/</span>
+        
+        <span><a target="_blank" rel="noopener" href="https://www.gldhn.top">web</a></span>
+        <span>/</span>
+        
+        <span><a target="_blank" rel="noopener" href="https://alist.gldhn.top">ALIST</a></span>
+        <span>/</span>
+        
+        <span><a target="_blank" rel="noopener" href="https://file.gldhn.top">File</a></span>
+        <span>/</span>
+        
+        <span><a target="_blank" rel="noopener" href="https://www.apihz.cn/">接口盒子</a></span>
+        <span>/</span>
+        
+        <span><a target="_blank" rel="noopener" href="https://icp.gov.moe/?keyword=20241241">萌ICP备20241241号</a></span>
+        <span>/</span>
+        
+    </p>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>  Theme <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = ""
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="/jquery.min.3.3.1.js"></script>
+
+<script src="/js/index.js"></script>
+
+<script defer src="https://events.vercount.one/js"></script>
+
+
+
+
+    <script src="https://giscus.app/client.js"
+    data-repo="Guailoudou/pages"
+    data-repo-id="R_kgDOLZFPxQ"
+    data-category="Announcements"
+    data-category-id="DIC_kwDOLZFPxc4CdlRm"
+    data-mapping="pathname"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="bottom"
+    data-theme="preferred_color_scheme"
+    data-lang="zh-CN"
+    crossorigin="anonymous"
+    async>
+</script>
+
+
+
+
+</html>

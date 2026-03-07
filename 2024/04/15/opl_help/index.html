@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang=zh-CN>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:description" content="乖漏斗个人博客，分享教程以及一些我制作的软件等，欢迎访问">
+    <meta property="og:type" content="website">
+    <meta name="description" content="乖漏斗个人博客，分享教程以及一些我制作的软件等，欢迎访问">
+    <meta name="keywords"  content="">
+    <link rel="shortcut icon" href="https://q1.qlogo.cn/g?b=qq&nk=1241593334&s=100">
+    <!-- <link rel="shortcut icon" href="/img/favicon.ico"> -->
+
+    <title>
+        
+        Openp2p-Launcher-MC帮助文档 - Guailoudou 博客
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/aircloud.css">
+
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_28hi1hpxx24.css" rel="stylesheet" type="text/css">
+    <link href="//at.alicdn.com/t/c/font_4657326_ux10jqqsarj.css"  rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+
+    
+
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 7.1.1"></head>
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> Guailoudou blog </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar radius">
+            <img src="https://q1.qlogo.cn/g?b=qq&nk=1241593334&s=640" />
+        </div>
+        <div class="name">
+            <i>Guailoudou</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/collect/">
+                    <i class="iconfont icon-shoucang1"></i>
+                    <span>收藏</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AF%A6%E7%BB%86"><span class="toc-text">详细</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%8B%E8%BD%BD%E5%9C%B0%E5%9D%80"><span class="toc-text">下载地址</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%EF%BC%880-5%EF%BC%89"><span class="toc-text">使用方法（0.5）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98"><span class="toc-text">常见问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#nat%E8%BF%9E%E9%80%9A%E6%80%A7"><span class="toc-text">nat连通性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8A%A5%E6%AF%92%E9%97%AE%E9%A2%98"><span class="toc-text">报毒问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9B%B4%E6%96%B0%E6%97%A5%E5%BF%97"><span class="toc-text">更新日志</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2024-1-29-v0-5-6-3"><span class="toc-text">2024-1-29 v0.5.6.3</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2024-1-22-v0-5-6-2"><span class="toc-text">2024-1-22 v0.5.6.2</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2023-11-30-v0-5-6-1"><span class="toc-text">2023-11-30 v0.5.6.1</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2023-11-6-v0-5-6-0"><span class="toc-text">2023-11-6 v0.5.6.0</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2023-10-5-v0-5-5-3"><span class="toc-text">2023-10-5 v0.5.5.3</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2023-9-5-v0-5-5-2"><span class="toc-text">2023-9-5 v0.5.5.2</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2023-9-3-v0-5-5"><span class="toc-text">2023-9-3 v0.5.5</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2023-8-23"><span class="toc-text">2023-8-23</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#0-5%E7%89%88%E6%9C%AC%E5%8A%9F%E8%83%BD"><span class="toc-text">0.5版本功能</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%97%AE%E9%A2%98%E5%8F%8D%E9%A6%88"><span class="toc-text">问题反馈</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B6%E4%BB%96"><span class="toc-text">其他</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%88%B1%E9%97%A8%EF%BC%81%EF%BC%81"><span class="toc-text">爱门！！</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-bg" id="search-bg"></div>
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i> Guailoudou blog </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        <div class="post-container">
+    <div class="post-title">
+        Openp2p-Launcher-MC帮助文档
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2024-04-15 21:55:41</span></span>
+        
+        <span class="attr">标签：/
+        
+        <a class="tag" href="/tags/#教程" title="教程">教程</a>
+        <span>/</span>
+        
+        <a class="tag" href="/tags/#工具" title="工具">工具</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content no-indent">
+        <h2 id="详细"><a href="#详细" class="headerlink" title="详细"></a>详细</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/Guailoudou/openp2p-launcher/tree/mc"><img src="https://img.shields.io/badge/Github-Openp2p%20Launcher-Green?logo=github" alt="github"></a> </li>
+<li><a target="_blank" rel="noopener" href="https://github.com/Guailoudou/openp2p-launcher/issues"><img src="https://img.shields.io/badge/Github-issues-Green?logo=github" alt="issues"></a> </li>
+<li><a target="_blank" rel="noopener" href="https://space.bilibili.com/496960407"><img src="https://img.shields.io/badge/bilibili-%E4%B9%96%E6%BC%8F%E6%96%97-pink?logo=bilibili&logoColor=#00A1D6" alt="在b站关注我"></a></li>
+</ul>
+<p>这是一款p2p的mc联机工具，世界直接出现在局域网，无需输入服务器地址，本程序基于<a target="_blank" rel="noopener" href="https://github.com/openp2p-cn/openp2p">openp2p</a>，本质为自动生成openp2p的配置文件，使用公共账户简化其使用，添加针对mc的功能，本程序开源，使用c++编写</p>
+<p>UI版详见<a href="/2024/04/19/opl_ui/">【推荐】UI版-WPF</a></p>
+<p>直连的连通性依赖于nat类型，具体条件见下面的<a href="#user-content-nat%E8%BF%9E%E9%80%9A%E6%80%A7">nat连通性</a>,使用用户<strong>多</strong>的时候不满足条件的也可以连上（中转） 仅直连条件下可以达到<strong>理论最低</strong>延迟</p>
+<p>查毒报告(内有行为分析，觉得不安全可以看看，文件已同步至0.5.6.3于2024-2-2上传)：<br><a target="_blank" rel="noopener" href="https://s.threatbook.com/report/file/c1a5f05f2d383506c0dcae99682b01fcca29f9033bdd92ccbb91e4602465b78d">微步沙箱 -x64</a><br><a target="_blank" rel="noopener" href="https://s.threatbook.com/report/file/493ed1b963b870d953c8818b9a565c5837043b81ead8286922a26f3ecc0c3cca">微步沙箱 -x86</a></p>
+<ul>
+<li><a href="#%E6%8A%A5%E6%AF%92%E9%97%AE%E9%A2%98">报毒问题</a></li>
+</ul>
+<p>使用方法根据提示输入即可，记得要<strong>回车</strong>。遇到问题可进群询问<code>873968900</code>（QQ）～ </p>
+<p><strong>转发给别人软件请不要连bin文件夹一起转发</strong><br><strong>转发给别人软件请不要连bin文件夹一起转发</strong></p>
+<p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV11P411a7dH/">视频演示</a></p>
+<h2 id="下载地址"><a href="#下载地址" class="headerlink" title="下载地址"></a>下载地址</h2><ul>
+<li>mc专用版<br>MD5值可以通过cmd在文件目录运行<code>certutil -hashfile 文件名 MD5</code>查看</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>下载地址</th>
+<th>MD5</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a href="/2024/04/19/opl_ui/">【推荐】UI版-WPF</a></td>
+<td>基于.net4.7.2全新UI操作页面 功能更加丰富，提供预设功能,连接状态更加直观，自动静默更新</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://gld.lanzoul.com/iMhnx1mzgo1a">Download-0.5.6.3win-x64</a></td>
+<td>e3696937a3d4b1baff8bf8c65cb58dd8</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://gld.lanzoul.com/i78cA1mzgo9i">Download-0.5.6.3win-x86</a></td>
+<td>171a63253a52d0a953c25a4f0e60716e</td>
+</tr>
+<tr>
+<td>or</td>
+<td></td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://github.com/Guailoudou/openp2p-launcher/releases">releases</a></td>
+<td>注意系统位数x64容易报毒，可下x86遇到问题可进群询问<code>873968900</code>（QQ）</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://gld.lanzoul.com/itZPD14z08qf">Download</a></td>
+<td>nat测试工具</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://gld.lanzoul.com/iQiQ81mn6k1e">Download签名文件</a></td>
+<td>买不起签名，自己签了一个，这个是安装签名到信任的工具，可以一点程度上降低报毒（效果不明显）</td>
+</tr>
+</tbody></table>
+<hr>
+<ul>
+<li>其他版本（<strong>玩mc不要下这个，这个版本不推荐使用，如果有其他连接需求可直接使用openp2p</strong>）<br><a target="_blank" rel="noopener" href="https://gld.lanzoul.com/icL0614z09ej">Download-0.6.2win-x64</a></li>
+</ul>
+<h2 id="使用方法（0-5）"><a href="#使用方法（0-5）" class="headerlink" title="使用方法（0.5）"></a>使用方法（0.5）</h2><p>被连接的输入<strong>0</strong>然后<strong>回车</strong>即可,然后把你的<strong>uuid</strong>和<strong>游戏端口</strong>发给要连接的人</p>
+<p>连接的，输入<strong>1或2</strong>（tcp1，udp2，mc，泰拉瑞亚用1，幻兽帕鲁类用2）然后输入<strong>对方uuid</strong>和游戏<strong>对外开放的端口</strong>,连接成功后程序会显示连接成功，直接通过局域网进入即可。</p>
+<p>出现<code>系统无法执行指定的程序</code>为被杀毒软件拦截，请关闭查毒软件后重启程序，或参考下面为程序目录添加白名单</p>
+<p><em><strong>连接端口默认为原端口-1，连接ip为 <code>127.0.0.1</code></strong></em></p>
+<p>使用1或2运行一次之后，会在同目录创建一个以tcp udp uuid和端口命名的快捷方式，可以通过运行快捷方式快速启动，可以通过右键快捷方式-&gt;目标，修改尾部端口数字来修改端口号，uuid也可以在这里修改，0.5.6.2开始，最后加个1为udp隧道</p>
+<p><strong>请不要把你的uuid随便发给不认识的人</strong>，可能存在计算机被入侵的可能，不小心泄露uuid了可以通过删除bin文件夹重置uuid</p>
+<p><img src="https://fastly.jsdelivr.net/gh/Guailoudou/urlimg@main/jyw.png" alt="jyw"><br><img src="https://fastly.jsdelivr.net/gh/Guailoudou/urlimg@main/link.png" alt="link"></p>
+<h2 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h2><ol>
+<li>程序显示<code>**** offline, it will auto reconnect when peer node online</code>说明对方程序未启动，请让他输入0启动，如果已经确保启动了请重新启动，或检查uuid是否输入正确。</li>
+<li><del>联机mc请使用0.5的版本，<strong>连接成功</strong>后世界会直接出现在局域网，这是mc专用版</del> UI版挺好的。</li>
+<li>游戏显示<code>登入失败，无效的会话</code>：正版验证问题(房主登录了一般就不会出现)，都使用外置登录或加联机模组关闭验证即可（个人推荐外置登录，还能加载皮肤披风,联机模组在新版本中貌似失效了）</li>
+<li>直连可行性受nat类型影响，为p2p连接，无中间服务器，具体见下面表格</li>
+<li><code>系统无法执行指定的程序</code>被杀毒软件拦截了，见下面<a href="#user-content-%E6%8A%A5%E6%AF%92%E9%97%AE%E9%A2%98">杀毒</a></li>
+<li>程序显示<code>连接成功</code>但游戏进来显示<code>连接超时</code>：检查端口有没有输入错误，核对端口的准确性</li>
+<li>反复异常断开连接：添加服务器ip地址，重启程序，刷新出服务器信息再进入</li>
+<li>程序显示<code>ERROR dial tcp 127.0.0.1:*****: connectex:****** No connection could be made because the targ machine actively refused it.</code>游戏的对外端口不存在或无法访问，检查对方输的端口或重启mc重新获取端口即可</li>
+<li>3大运营商（电信 移动 联通）以外的运营商可以放弃尝试了，其他运营商（广电,长城…）基本都是nat4,流量充足可以考虑用流量,或者靠运气连上</li>
+<li>连不上可以尝试参看这个教程进行nat类型优化 <a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/338917185">如何提升NAT类型?</a></li>
+<li>报错：<code>ERROR listen error:listen tcp :*****: bind: An attempt was made to access a socket in a way forbidden by its access permissions.</code>打开<code>bin</code>文件夹，打开<code>config.json</code> -&gt; 修改<code>SrcPort</code>参数为任意其他数字，推荐<code>25565-25665</code>之间的，然后直接打开<code>openp2p.exe</code>，再通过<code>127.0.0.1:刚才改后端口</code> 添加服务器后刷新出服务器信息再进入游戏</li>
+<li>更多常见问题等你来<a href="#user-content-%E9%97%AE%E9%A2%98%E5%8F%8D%E9%A6%88">反馈</a><br>网上看到的，觉得说得很对~<img src="https://fastly.jsdelivr.net/gh/Guailoudou/urlimg@main/tw.png" width="100%" alt="说的很对"></li>
+</ol>
+<h2 id="nat连通性"><a href="#nat连通性" class="headerlink" title="nat连通性"></a>nat连通性</h2><p><strong>优化手段</strong>：可以通过在路由器&#x2F;光猫开启upnp功能，以及设置DMZ主机的方式提高nat环境（光猫需要超级管理员账户密码）<br>nat类型可在程序刚刚开始运行时看到，为<code>NATtype</code>（不太准）<br>连不上可以尝试参看这个教程进行nat类型优化 <a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/338917185">如何提升NAT类型?</a></p>
+<table>
+<thead>
+<tr>
+<th>nat类型</th>
+<th>nat值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Full cone NAT（全锥形NAT）</td>
+<td>nat1</td>
+</tr>
+<tr>
+<td>Port Restricted Cone NAT（端口受限锥形NAT）</td>
+<td>nat2</td>
+</tr>
+<tr>
+<td>Restricted Cone NAT（地址受限锥形NAT）</td>
+<td>nat3</td>
+</tr>
+<tr>
+<td>Symetric NAT（对称NAT）</td>
+<td>nat4</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>nat值</th>
+<th>nat1</th>
+<th>nat2</th>
+<th>nat3</th>
+<th>nat4</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>nat1</td>
+<td>✔️</td>
+<td>✔️</td>
+<td>✔️</td>
+<td>✔️</td>
+</tr>
+<tr>
+<td>nat2</td>
+<td>✔️</td>
+<td>✔️</td>
+<td>✔️</td>
+<td>✖️</td>
+</tr>
+<tr>
+<td>nat3</td>
+<td>✔️</td>
+<td>✔️</td>
+<td>✖️</td>
+<td>✖️</td>
+</tr>
+<tr>
+<td>nat4</td>
+<td>✔️</td>
+<td>✖️</td>
+<td>✖️</td>
+<td>✖️</td>
+</tr>
+</tbody></table>
+<ul>
+<li>✔️代表可以建立直连，✖️不代表一定连不上，仅连接时间可能较长</li>
+</ul>
+<h2 id="报毒问题"><a href="#报毒问题" class="headerlink" title="报毒问题"></a>报毒问题</h2><ul>
+<li>程序安全无毒，程序完全开源，但因为没有软件代码证书，所以非常容易报毒（就输出个hello world放其他人电脑上都报毒）</li>
+<li>系统自带安全程序报毒：<br>Windows安全中心-&gt;病毒和威胁防护-&gt;“病毒和威胁防护”设置-&gt;管理设置-&gt;排除项-&gt;添加或删除排除项-&gt;添加排除项-&gt;文件夹，然后选择存放程序的上一级文件夹<br>或安装火绒顶掉，火绒不报毒</li>
+<li>其他报毒：<br>我无其他杀毒软件，大体和上面一致，就是把放程序那个文件夹添加到信任或排除，或安装火绒顶掉，火绒不报毒</li>
+<li>实在不行下x86（32位），这个报毒率低（我也不理解原理，代码一模一样）</li>
+</ul>
+<h2 id="更新日志"><a href="#更新日志" class="headerlink" title="更新日志"></a>更新日志</h2><blockquote>
+<p>之后的写这里，之前的懒得搬过来了</p>
+</blockquote>
+<h3 id="2024-1-29-v0-5-6-3"><a href="#2024-1-29-v0-5-6-3" class="headerlink" title="2024-1-29 v0.5.6.3"></a>2024-1-29 v0.5.6.3</h3><ul>
+<li>修复udp模式下连接成功后无中文提示的bug</li>
+</ul>
+<h3 id="2024-1-22-v0-5-6-2"><a href="#2024-1-22-v0-5-6-2" class="headerlink" title="2024-1-22 v0.5.6.2"></a>2024-1-22 v0.5.6.2</h3><ul>
+<li>添加模式2为udp隧道</li>
+<li>在新生成的快捷方式头部添加隧道类型（tcp&#x2F;udp）与以前的兼容</li>
+<li>快捷方式目标最后面添加1为udp隧道</li>
+<li>支持了单udp连接，连接的快捷方式与以前的兼容（支持upd的游戏啦~）</li>
+<li>修改了本地端口规则为默认-1</li>
+</ul>
+<h3 id="2023-11-30-v0-5-6-1"><a href="#2023-11-30-v0-5-6-1" class="headerlink" title="2023-11-30 v0.5.6.1"></a>2023-11-30 v0.5.6.1</h3><ul>
+<li>修复部分情况下程序中文显示乱码的问题</li>
+<li>修复0模式下无法正确接收openp2p版本更新的问题</li>
+</ul>
+<h3 id="2023-11-6-v0-5-6-0"><a href="#2023-11-6-v0-5-6-0" class="headerlink" title="2023-11-6 v0.5.6.0"></a>2023-11-6 v0.5.6.0</h3><ul>
+<li>去除了模式2，以快捷方式替代</li>
+<li>现在使用模式1连接后会自动生成一个快捷方式在同目录，快捷方式的路径后部可以直接更改端口，使用快捷方式打开，免输入参数</li>
+<li>去除了反复的<code>连接成功</code>，<code>连接中</code>的提示</li>
+<li>增加了程序图标，版本信息等</li>
+</ul>
+<h3 id="2023-10-5-v0-5-5-3"><a href="#2023-10-5-v0-5-5-3" class="headerlink" title="2023-10-5 v0.5.5.3"></a>2023-10-5 v0.5.5.3</h3><ul>
+<li>修复了一个陈年的，几乎没触发过的bug</li>
+<li>添加了部分可被推送openp2p更新的功能（未完成）</li>
+<li>学Java去~ 计划之后用Java再写一次，终极目标直接写成mod集成在mc（<del>画大饼</del>）</li>
+</ul>
+<h3 id="2023-9-5-v0-5-5-2"><a href="#2023-9-5-v0-5-5-2" class="headerlink" title="2023-9-5 v0.5.5.2"></a>2023-9-5 v0.5.5.2</h3><ul>
+<li>同步了openp2p版本到3.10.9，连接成功率大大提升，升级请删除bin文件夹内的openp2p文件</li>
+<li>增加了个小提示</li>
+</ul>
+<h3 id="2023-9-3-v0-5-5"><a href="#2023-9-3-v0-5-5" class="headerlink" title="2023-9-3 v0.5.5"></a>2023-9-3 v0.5.5</h3><ul>
+<li>今天是我生日嘞，学校网烂github延后上传</li>
+<li>修改了多线程运行逻辑，现在连接成功之后才会出现在局域网</li>
+<li>优化了显示是文字，将<code>sever not online</code>替换为<code>连接中...</code></li>
+</ul>
+<h3 id="2023-8-23"><a href="#2023-8-23" class="headerlink" title="2023-8-23"></a>2023-8-23</h3><ul>
+<li>现在有了支持x86的版本</li>
+</ul>
+<h3 id="0-5版本功能"><a href="#0-5版本功能" class="headerlink" title="0.5版本功能"></a>0.5版本功能</h3><ul>
+<li>0.5.3.4同步了openp2p版本到3.10.3(更新版本需要删除以前的bin&#x2F;openp2p文件)</li>
+<li>世界直接出现在局域网，无需输入服务器地址</li>
+<li>支持连接的免登录，房主得登录，可使用<a target="_blank" rel="noopener" href="https://littleskin.cn/">外置登录</a></li>
+<li>操作简单</li>
+</ul>
+<h2 id="问题反馈"><a href="#问题反馈" class="headerlink" title="问题反馈"></a>问题反馈</h2><ul>
+<li>遇到问题可入群反馈<code>873968900</code></li>
+<li>也可以在这里提出你的建议<br><a target="_blank" rel="noopener" href="https://github.com/Guailoudou/openp2p-launcher/issues"><img src="https://img.shields.io/badge/Github-issues-Green?logo=github" alt="issues"></a></li>
+</ul>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><ul>
+<li>littleskin皮肤站<br><a target="_blank" rel="noopener" href="https://littleskin.cn/"><img src="https://img.shields.io/badge/link-littleskin-Green?logo=minetest" alt="pcl2"></a></li>
+<li>pcl2下载地址<br> <a target="_blank" rel="noopener" href="https://afdian.net/p/0164034c016c11ebafcb52540025c377"><img src="https://img.shields.io/badge/link-PCL2-Green?logo=windows" alt="pcl2"></a></li>
+<li>HMCL下载地址<br> <a target="_blank" rel="noopener" href="https://hmcl.huangyuhui.net/download/"><img src="https://img.shields.io/badge/link-HMCL-Green?logo=windows" alt="HMCL"></a></li>
+<li>BakaXL下载地址<br> <a target="_blank" rel="noopener" href="https://www.bakaxl.com/"><img src="https://img.shields.io/badge/link-BakaXL-Green?logo=windows" alt="BakaXL"></a></li>
+</ul>
+<h2 id="爱门！！"><a href="#爱门！！" class="headerlink" title="爱门！！"></a>爱门！！</h2><p><del>发病ing</del></p>
+<blockquote>
+<p>某一日，祂从天坠落&#9834;<br>  人们抬头仰望，于是看见了星空&#9834;<br>  星月送来神的女儿，她愿成为人的伴侣&#9834;<br>  长风化作她的轺车，四海落成她的园圃&#9834;鸟雀衔来善的种子，百花编织爱的颂歌&#9834;<br>  她便是这样降生于世，行于大地，与人类一同长大，与世界一起发芽&#9834;<br>  而今，终焉之时将至&#9834;<br>  而今，归去之时已至&#9834;<br>  就此告别吧，美丽的世界&#9834;<br>  此后，将有群星闪耀，因为我如今来过&#9834;<br>  此后，将有百花绽放，因为我从未离去&#9834;<br>  请将我的箭、我的花、与我的爱，织成新生的种子，带向那枯萎的大地&#9834;<br>  然后，便让它开出永恒而无瑕的…人性之华吧&#9834;<br>  我名为爱莉希雅&#9834;<br>  最初的律者，人之律者&#9834;<br>  <img src="https://fastly.jsdelivr.net/gh/Guailoudou/urlimg@main/bh3ali.png" alt="爱莉希雅"></p>
+</blockquote>
+<hr>
+<p><img src="https://api.xingzhige.com/API/yshl/" alt="hli"><br>©2023 guailoudou</p>
+
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+        <div id="lv-container"></div>
+        <div class="giscus"></div>
+    </div>
+</div>
+    </div>
+</div>
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+        <li>
+            <a target="_blank"  href="https://github.com/Guailoudou">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+            <li>
+                <a target="_blank"  href="https://afdian.com/a/Guailoudou">
+                                <span class="fa-stack fa-lg">
+                                    <i class="iconfont icon-afdian"></i>
+                                </span>
+                </a>
+            </li>
+        
+
+        
+            <li>
+                <a target="_blank"  href="https://space.bilibili.com/496960407">
+                                <span class="fa-stack fa-lg">
+                                    <i class="iconfont icon-bilibili-line"></i>
+                                </span>
+                </a>
+            </li>
+        
+
+        
+            <li>
+                <a target="_blank"  href="https://qm.qq.com/q/tVdS3KHYxG">
+                                <span class="fa-stack fa-lg">
+                                    <i class="iconfont icon-QQ"></i>
+                                </span>
+                </a>
+            </li>
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span>/</span>
+        
+        <span><a target="_blank" rel="noopener" href="https://www.gldhn.top">web</a></span>
+        <span>/</span>
+        
+        <span><a target="_blank" rel="noopener" href="https://alist.gldhn.top">ALIST</a></span>
+        <span>/</span>
+        
+        <span><a target="_blank" rel="noopener" href="https://file.gldhn.top">File</a></span>
+        <span>/</span>
+        
+        <span><a target="_blank" rel="noopener" href="https://www.apihz.cn/">接口盒子</a></span>
+        <span>/</span>
+        
+        <span><a target="_blank" rel="noopener" href="https://icp.gov.moe/?keyword=20241241">萌ICP备20241241号</a></span>
+        <span>/</span>
+        
+    </p>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>  Theme <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = ""
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="/jquery.min.3.3.1.js"></script>
+
+<script src="/js/index.js"></script>
+
+<script defer src="https://events.vercount.one/js"></script>
+
+
+
+
+    <script src="https://giscus.app/client.js"
+    data-repo="Guailoudou/pages"
+    data-repo-id="R_kgDOLZFPxQ"
+    data-category="Announcements"
+    data-category-id="DIC_kwDOLZFPxc4CdlRm"
+    data-mapping="pathname"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="bottom"
+    data-theme="preferred_color_scheme"
+    data-lang="zh-CN"
+    crossorigin="anonymous"
+    async>
+</script>
+
+
+
+
+</html>
