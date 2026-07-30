@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Minecraft JSON-RPC API 浏览器</title>
+  <style>
+    body {
+      font-family: "Segoe UI", sans-serif;
+      line-height: 1.6;
+      color: #333;
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #f9f9fb;
+
+      padding-top: 70px;
+    }
+    h1, h2, h3 {
+      color: #2c3e50;
+    }
+    header {
+      text-align: center;
+      margin-bottom: 30px;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 10px;
+    }
+    .search-box-container {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  max-width: 600px;
+  z-index: 1000;
+}
+
+.search-box-container input {
+  width: 100%;
+  padding: 12px 16px;
+  font-size: 16px;
+  border: 2px solid #3498db;
+  border-radius: 30px;
+  outline: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  background-color: white;
+  transition: all 0.3s ease;
+  font-family: "Segoe UI", sans-serif;
+}
+
+.search-box-container input:focus {
+  border-color: #2980b9;
+  box-shadow: 0 6px 16px rgba(52, 152, 219, 0.25);
+  transform: scale(1.02);
+}
+    .method, .event, .schema {
+      background: white;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 16px;
+      margin-bottom: 16px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    /* 统一所有标签为蓝色主题 */
+    .method-name, .event-name, .schema-name {
+      font-family: 'Courier New', monospace;
+      background: #2980b9; /* 统一蓝色 */
+      color: white;
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-size: 1.1em;
+      display: inline-block;
+    }
+
+    .description {
+      margin: 8px 0;
+      color: #555;
+    }
+    .params, .result, .notification-params, .schema-properties {
+      margin: 12px 0;
+    }
+    .params h4, .result h4, .notification-params h4, .schema-properties h4 {
+      margin-top: 8px;
+      color: #2c3e50;
+    }
+    .param-item, .notification-param-item {
+      margin-left: 16px;
+      color: #16a085;
+    }
+    .schemat {
+      font-family: 'Courier New', monospace;
+      background: #ecf0f1;
+      padding: 2px 6px;
+      border-radius: 3px;
+      font-size: 0.95em;
+    }
+    .tab {
+      display: flex;
+      margin-bottom: 20px;
+    }
+    .tab button {
+      padding: 10px 20px;
+      background: #ecf0f1;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+      border-bottom: 3px solid transparent;
+    }
+    .tab button:hover {
+      background: #bdc3c7;
+    }
+    .tab button.active {
+      background: #3498db;
+      color: white;
+      border-bottom: 3px solid #2980b9;
+    }
+    .tabcontent {
+      display: none;
+    }
+    .tabcontent.active {
+      display: block;
+    }
+    .loading {
+      text-align: center;
+      font-size: 18px;
+      color: #7f8c8d;
+      margin-top: 40px;
+    }
+    .error {
+      color: #e74c3c;
+      background: #fadbd8;
+      padding: 15px;
+      border-radius: 6px;
+      margin: 20px 0;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Minecraft JSON-RPC API 浏览器</h1>
+    <p>基于 OpenRPC 规范自动生成的 API 文档</p>
+  </header>
+
+  <div class="search-box-container">
+    <input type="text" id="searchInput" class="search-box" placeholder="搜索方法名、事件或数据模型..." />
+  </div>
+
+  <div class="tab">
+    <button class="tab-btn active" data-tab="methods">API 方法</button>
+    <button class="tab-btn" data-tab="events">通知事件</button>
+    <button class="tab-btn" data-tab="schemas">数据模型</button>
+  </div>
+
+  <div id="loading" class="loading">正在加载 API 文档...</div>
+  <div id="error" class="error" style="display:none;"></div>
+
+  <div id="methods" class="tabcontent active"></div>
+  <div id="events" class="tabcontent"></div>
+  <div id="schemas" class="tabcontent"></div>
+
+  <script>
+    const methodsContainer = document.getElementById('methods');
+    const eventsContainer = document.getElementById('events');
+    const schemasContainer = document.getElementById('schemas');
+    const loadingEl = document.getElementById('loading');
+    const errorEl = document.getElementById('error');
+
+    // 加载 JSON 文件
+    fetch('https://blog.gldhn.top/2025/08/27/mc_wsapi_1_0/wsbackapi.json')
+      .then(res => {
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        return res.json();
+      })
+      .then(data => {
+        const openrpcDoc = data.result || data;
+        if (!openrpcDoc.methods) {
+          throw new Error('无效的 OpenRPC 文档：缺少 methods');
+        }
+        loadingEl.style.display = 'none';
+        renderAPI(openrpcDoc);
+      })
+      .catch(err => {
+        loadingEl.style.display = 'none';
+        errorEl.style.display = 'block';
+        errorEl.textContent = `加载失败: ${err.message}`;
+      });
+
+    function renderAPI(spec) {
+      const methods = spec.methods || [];
+      const apiMethods = methods.filter(m => !m.name.startsWith("notification:"));
+      const events = methods.filter(m => m.name.startsWith("notification:"));
+      const schemas = spec.components?.schemas || {};
+
+      renderMethods(apiMethods);
+      renderEvents(events);
+      renderSchemas(schemas);
+
+      setupSearch(apiMethods, events, schemas);
+    }
+
+    function renderMethods(methods) {
+      methods.forEach(method => {
+        const div = document.createElement('div');
+        div.className = 'method';
+        div.dataset.search = (method.name + ' ' + (method.description || '')).toLowerCase();
+
+        let paramsHTML = '';
+        if (method.params && method.params.length > 0) {
+          paramsHTML = '<div class="params"><h4>参数:</h4><ul>';
+          method.params.forEach(p => {
+            const schema = renderSchema(p.schema);
+            paramsHTML += `<li><strong>${p.name}</strong> ${p.required ? '(必填)' : ''}: <span class="description">${p.description || ''}</span> <br>类型: <span class="schemat">${schema}</span></li>`;
+          });
+          paramsHTML += '</ul></div>';
+        }
+
+        let resultHTML = '';
+        if (method.result) {
+          const schema = renderSchema(method.result.schema);
+          resultHTML = `<div class="result"><h4>返回值:</h4><span class="schemat">${schema}</span> - ${method.result.description || ''}</div>`;
+        }
+
+        div.innerHTML = `
+          <div class="method-name">${method.name}</div>
+          <div class="description">${method.description || '无描述'}</div>
+          ${paramsHTML}
+          ${resultHTML}
+        `;
+
+        methodsContainer.appendChild(div);
+      });
+    }
+
+    function renderEvents(events) {
+      events.forEach(event => {
+        const div = document.createElement('div');
+        div.className = 'event';
+        div.dataset.search = (event.name + ' ' + (event.description || '')).toLowerCase();
+
+        let paramsHTML = '';
+        if (event.params && event.params.length > 0) {
+          paramsHTML = '<div class="notification-params"><h4>事件参数:</h4><ul>';
+          event.params.forEach(p => {
+            const schema = renderSchema(p.schema);
+            paramsHTML += `<li><strong>${p.name}</strong>: <span class="description">${p.description || ''}</span> <br>类型: <span class="schemat">${schema}</span></li>`;
+          });
+          paramsHTML += '</ul></div>';
+        }
+
+        div.innerHTML = `
+          <div class="event-name">${event.name}</div>
+          <div class="description">${event.description || '无描述'}</div>
+          ${paramsHTML}
+        `;
+
+        eventsContainer.appendChild(div);
+      });
+    }
+
+    function renderSchemas(schemas) {
+      Object.keys(schemas).forEach(name => {
+        const schema = schemas[name];
+        const div = document.createElement('div');
+        div.className = 'schema';
+        div.dataset.search = (name + ' ' + (schema.description || '')).toLowerCase();
+
+        let propsHTML = '';
+        if (schema.properties) {
+          propsHTML = '<div class="schema-properties"><h4>字段:</h4><ul>';
+          Object.keys(schema.properties).forEach(key => {
+            const prop = schema.properties[key];
+            const type = renderSchema(prop);
+            const desc = prop.description || '';
+            propsHTML += `<li><strong>${key}</strong>: <span class="schemat">${type}</span> - ${desc}</li>`;
+          });
+          propsHTML += '</ul></div>';
+        }
+
+        div.innerHTML = `
+          <div class="schema-name">${name}</div>
+          <div class="description">${schema.description || '无描述'}</div>
+          <strong>类型:</strong> <span class="schemat">${schema.type}</span>
+          ${propsHTML}
+        `;
+
+        schemasContainer.appendChild(div);
+      });
+    }
+
+    function renderSchema(schema) {
+      if (!schema) return 'unknown';
+
+      if (schema.$ref) {
+        return schema.$ref.split('/').pop();
+      }
+      if (schema.type === 'array') {
+        const items = schema.items ? renderSchema(schema.items) : 'any';
+        return `array[${items}]`;
+      }
+      if (schema.type === 'object') {
+        if (schema.properties) {
+          const keys = Object.keys(schema.properties);
+          const preview = keys.slice(0, 3).map(k => {
+            const type = schema.properties[k].$ref 
+              ? schema.properties[k].$ref.split('/').pop() 
+              : schema.properties[k].type || 'any';
+            return `${k}: ${type}`;
+          }).join(', ');
+          return `{${preview}${keys.length > 3 ? '...' : ''}}`;
+        }
+        return 'object';
+      }
+      return schema.type || 'any';
+    }
+
+    function setupSearch(methods, events, schemas) {
+      const searchInput = document.getElementById('searchInput');
+      searchInput.addEventListener('input', function () {
+        const query = this.value.trim().toLowerCase();
+        if (!query) {
+          showAll();
+          return;
+        }
+
+        filterElements('method', query);
+        filterElements('event', query);
+        filterElements('schema', query);
+      });
+    }
+
+    function filterElements(cls, query) {
+      const elements = document.querySelectorAll('.' + cls);
+      elements.forEach(el => {
+        if (el.dataset.search.includes(query)) {
+          el.style.display = 'block';
+        } else {
+          el.style.display = 'none';
+        }
+      });
+    }
+
+    function showAll() {
+      document.querySelectorAll('.method, .event, .schema').forEach(el => {
+        el.style.display = 'block';
+      });
+    }
+
+    document.querySelectorAll('.tab-btn').forEach(btn => {
+      btn.addEventListener('click', function () {
+        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+        document.querySelectorAll('.tabcontent').forEach(c => c.classList.remove('active'));
+        this.classList.add('active');
+        document.getElementById(this.dataset.tab).classList.add('active');
+      });
+    });
+  </script>
+</body>
+</html>
